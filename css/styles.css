@@ -1185,3 +1185,68 @@ main {
     }
 }
 
+@media (max-width: 768px) {
+    /* Convertir el sidebar en una barra horizontal superior */
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100% !important;
+        height: auto !important;
+        flex-direction: row !important;
+        overflow-x: auto; /* Permite deslizar las categorías hacia los lados */
+        padding: 10px;
+        gap: 15px;
+        position: sticky;
+        top: 0;
+        background: rgba(0,0,0,0.95);
+        z-index: 1000;
+    }
+
+    .cat-item {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+        white-space: nowrap; /* Evita que el texto se parta en dos líneas */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajuste de títulos principales */
+    h1, .titulo-dorado {
+        font-size: 1.8rem !important;
+        text-align: center;
+    }
+
+    /* Ajuste de los contadores/stats de la Imagen 3 */
+    .stats-container { /* Ajusta este nombre a tu clase de números */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .stats-number {
+        font-size: 1.5rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-parallax {
+        width: 90% !important;
+        margin: 10px auto;
+        height: auto;
+        min-height: 250px;
+    }
+
+    .card-content {
+        padding: 15px;
+    }
+
+    /* Ajustar los iconos inferiores que se ven amontonados */
+    .card-icons-footer { 
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        font-size: 0.7rem;
+    }
+}

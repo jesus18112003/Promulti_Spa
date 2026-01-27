@@ -471,7 +471,7 @@ function cargarSeccion(seccion) {
                         <img src="assets/img/CivIcon-tatars.webp" alt="Tartaros">
                         <img src="assets/img/CivIcon-cumans.webp" alt="Cumanos">
                         <img src="assets/img/CivIcon-Espa.webp" alt="Espannoles">
-                        <img src="assets/img/CivIcon-ita.webp" alt="Italianos">
+                        <img src="assets/img/CivIcon-Ita.webp" alt="Italianos">
                         <img src="assets/img/CivIcon-viet.webp" alt="Vietnamitas">
                     </div>
                 </div>
