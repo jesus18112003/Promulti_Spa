@@ -1722,74 +1722,85 @@ main {
         font-weight: bold !important;
     }
 
+    /* 1. EL CONTENEDOR: El secreto es 'padding: 0' y 'box-sizing' */
     .modal-content-premium {
-    position: relative !important;
-    width: 95% !important;
-    max-width: 380px !important;
-    max-height: 85vh !important;
-    margin: 20px auto !important;
-    padding: 0 !important;
-    background: #0d0d0d !important;
-    border: 2px solid #c5a059 !important;
-    overflow-x: hidden !important; /* El modal no se mueve de lado */
-    overflow-y: auto !important;   /* El contenido sí baja */
-    display: flex !important;
-    flex-direction: column !important;
-}
+        width: 90% !important;         /* Ocupa el 90% de la pantalla */
+        max-width: 380px !important;    /* No crece más de esto */
+        margin: 5vh auto !important;    /* Centrado perfecto arriba/abajo y lados */
+        padding: 0 !important;          /* ELIMINA ESTO para que la franja roja toque los bordes */
+        background-color: #0d0d0d !important;
+        border: 2px solid #c5a059 !important;
+        border-radius: 8px !important;
+        overflow: hidden !important;     /* Corta la franja roja para que no se salga de los bordes redondos */
+        position: relative !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
 
-/* 2. EL ARREGLO DE LA "X": Tamaño fijo y posición absoluta */
-.btn-cerrar-modal {
-    position: absolute !important; 
-    top: 5px !important;
-    right: 5px !important;
-    width: 35px !important;   /* Ancho fijo */
-    height: 35px !important;  /* Alto fijo */
-    min-width: 35px !important;
-    min-height: 35px !important;
-    background: rgba(0, 0, 0, 0.3) !important; /* Fondo sutil para que se vea */
-    color: white !important;
-    border: 1px solid rgba(255,255,255,0.2) !important;
-    border-radius: 4px !important;
-    font-size: 20px !important;
-    z-index: 9999 !important; /* Por encima de todo */
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-    line-height: 1 !important;
-}
+    /* 2. LA FRANJA ROJA: Ahora llegará de borde a borde */
+    .modal-content-premium::before {
+        content: "" !important;
+        display: block !important;
+        width: 100% !important;        /* Ocupa todo el ancho disponible */
+        height: 45px !important;       /* Altura de la cabecera */
+        background: #8b0000 !important;
+        border-bottom: 2px solid #c5a059 !important;
+    }
 
-/* 3. La franja roja superior (Estética) */
-.modal-content-premium::before {
-    content: "";
-    display: block !important;
-    width: 100% !important;
-    height: 45px !important;
-    background: #8b0000 !important;
-    border-bottom: 2px solid #c5a059 !important;
-}
+    /* 3. EL BOTÓN X: Posicionado sobre la franja roja */
+    .btn-cerrar-modal {
+        position: absolute !important;
+        top: 7px !important;
+        right: 10px !important;
+        width: 30px !important;        /* Tamaño fijo cuadrado */
+        height: 30px !important;
+        background: rgba(0, 0, 0, 0.4) !important;
+        color: #ffffff !important;
+        border: 1px solid #c5a059 !important;
+        font-size: 18px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 100 !important;
+        border-radius: 4px !important;
+        padding: 0 !important;
+    }
 
-/* 4. LA LÍNEA DE MILICIA (Scroll Horizontal Forzado) */
-.evoluciones-flex-container {
-    display: flex !important;
-    flex-direction: row !important; /* FUERZA FILA */
-    flex-wrap: nowrap !important;   /* PROHIBE BAJAR */
-    overflow-x: auto !important;    /* ACTIVA EL DESLIZAMIENTO */
-    gap: 10px !important;
-    padding: 20px 15px !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-    -webkit-overflow-scrolling: touch;
-}
+    /* 4. TÍTULOS: Ajustados para que no empujen el contenedor */
+    .titulo-dorado {
+        font-size: 1.2rem !important;  /* Tamaño manejable */
+        text-align: center !important;
+        margin: 15px 0 5px !important;
+        padding: 0 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
 
-/* 5. Asegurar que cada unidad NO SE ENCOJA */
-.evo-column {
-    flex: 0 0 130px !important; /* Cada etapa ocupa 130px pase lo que pase */
-    max-width: 130px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-}
+    .subtitulo-rojo-enc {
+        font-size: 0.7rem !important;
+        text-align: center !important;
+        margin-bottom: 15px !important;
+        width: 100% !important;
+    }
+
+    /* 5. EL CONTENEDOR DE LAS UNIDADES (MILICIA) */
+    .evoluciones-flex-container {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;   /* Mantiene la línea recta */
+        overflow-x: auto !important;    /* Permite el scroll que ya te funciona */
+        padding: 10px 15px 25px !important;
+        gap: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 6. CADA UNIDAD: Para que el scroll sea suave */
+    .evo-column {
+        flex: 0 0 130px !important;    /* Cada unidad tiene un ancho fijo */
+        min-width: 130px !important;
+    }
 
 .evo-image-frame {
     width: 60px !important;
