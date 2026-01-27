@@ -1374,28 +1374,45 @@ main {
 
     /* 5. ARREGLO DE LA ENCICLOPEDIA (Imagen 1) */
     .enciclopedia-container {
-        flex-direction: column !important;
-        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important; /* Categorías arriba, contenido abajo */
+        gap: 20px !important;
+        padding-top: 20px !important;
     }
 
     .enciclopedia-sidebar {
         width: 100% !important;
         height: auto !important;
-        flex-direction: row !important;
-        overflow-x: auto !important; /* Scroll lateral para categorías */
-        padding: 5px !important;
+        flex-direction: row !important; /* Se ponen de lado */
+        overflow-x: auto !important; /* Permite deslizar si no caben */
+        padding: 10px !important;
+        background: rgba(0, 0, 0, 0.5) !important;
+        border-bottom: 1px solid var(--dorado) !important;
+        justify-content: flex-start !important;
+        -webkit-overflow-scrolling: touch;
     }
 
     .cat-item {
-        padding: 10px 15px !important;
-        font-size: 0.75rem !important;
-        white-space: nowrap !important;
+        white-space: nowrap !important; /* Evita que el texto se rompa */
+        padding: 8px 15px !important;
+        font-size: 0.8rem !important;
     }
 
-    .unidades-grid-scroll {
+    .enciclopedia-header {
+        text-align: center !important;
+        padding: 0 15px !important;
+    }
+
+    .enciclopedia-header h1 {
+        font-size: 1.8rem !important; /* Ajusta el tamaño para que no se vea gigante */
+        margin-top: 10px !important;
+    }
+
+   .unidades-grid-scroll {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
-        padding: 10px !important;
-        gap: 10px !important;
+        gap: 15px !important;
+        padding: 15px !important;
+        justify-items: center !important;
     }
 
     /* 1. Forzamos a que el contenedor NO sea ancho */
@@ -1591,4 +1608,223 @@ main {
         max-width: 250px;
         margin: 0 auto !important;
     }
+
+    .modal-overlay {
+        padding: 20px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(0, 0, 0, 0.9) !important; /* Un poco más oscuro para enfocar */
+    }
+
+    /* 2. El Contenido del Modal: Lo achicamos para que no toque los bordes */
+    .modal-contenido {
+        width: 95% !important;
+        max-height: 85vh !important; /* No permitimos que ocupe todo el alto */
+        overflow-y: auto !important; /* Si hay mucho texto, que ruede por dentro */
+        border: 2px solid var(--dorado) !important;
+        border-radius: 8px !important;
+        position: relative !important;
+        padding-top: 50px !important; /* Espacio para la X de cerrar */
+    }
+
+    /* 3. El Botón de Cerrar (Añádelo en tu JS si no existe, o estilizalo aquí) */
+    .boton-cerrar-modal {
+        position: fixed !important;
+        top: 30px !important;
+        right: 30px !important;
+        width: 45px !important;
+        height: 45px !important;
+        background: var(--rojo-aoe) !important;
+        color: white !important;
+        border: 2px solid var(--dorado) !important;
+        border-radius: 50% !important;
+        font-size: 24px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 9999 !important;
+        cursor: pointer !important;
+        box-shadow: 0 0 15px rgba(0,0,0,0.5) !important;
+    }
+
+    /* 4. Ajuste de imagen dentro del modal */
+    .modal-contenido img {
+        max-width: 120px !important;
+        margin: 0 auto 15px !important;
+    }
+
+    /* 5. Ajuste de textos en el modal */
+    .modal-info h2 {
+        font-size: 1.5rem !important;
+        color: var(--dorado) !important;
+    }
+
+    /* 1. Reducir el tamaño general del modal */
+    .modal-evolucion-contenido {
+        width: 92% !important;
+        max-height: 90vh !important;
+        padding: 15px !important;
+        overflow-y: auto !important; /* Permite scroll si el contenido es largo */
+    }
+
+    .modal-evolucion-contenido h2 {
+        font-size: 1.4rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 2. SOLUCIÓN PARA LA LÍNEA DE MILICIA (Y otras largas) */
+    .linea-evolucion {
+        display: flex !important;
+        flex-wrap: nowrap !important; /* Evitamos que se rompa el diseño */
+        overflow-x: auto !important; /* Habilitamos scroll lateral solo para las flechas */
+        padding: 20px 10px !important;
+        gap: 10px !important;
+        justify-content: flex-start !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-radius: 8px !important;
+        -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+    }
+
+    /* 3. Ajustar los items de la evolución para que sean más pequeños */
+    .evolucion-item {
+        flex: 0 0 80px !important; /* Forzamos un ancho pequeño para que quepan más */
+        text-align: center !important;
+    }
+
+    .evolucion-item img {
+        width: 50px !important; /* Iconos más pequeños */
+        height: 50px !important;
+    }
+
+    .evolucion-item p {
+        font-size: 0.7rem !important;
+        line-height: 1.1 !important;
+        margin-top: 5px !important;
+    }
+
+    /* 4. Las flechas de evolución */
+    .flecha-evolucion {
+        display: flex !important;
+        align-items: center !important;
+        font-size: 1rem !important;
+        color: var(--dorado) !important;
+    }
+
+    /* 5. Botón de cerrar del modal (para que sea fácil de tocar) */
+    .btn-cerrar-modal {
+        width: 100% !important;
+        margin-top: 20px !important;
+        padding: 12px !important;
+        background: var(--rojo-aoe) !important;
+        border: 1px solid var(--dorado) !important;
+        color: white !important;
+        font-weight: bold !important;
+    }
+
+    .modal-content-premium {
+    position: relative !important;
+    width: 95% !important;
+    max-width: 380px !important;
+    max-height: 85vh !important;
+    margin: 20px auto !important;
+    padding: 0 !important;
+    background: #0d0d0d !important;
+    border: 2px solid #c5a059 !important;
+    overflow-x: hidden !important; /* El modal no se mueve de lado */
+    overflow-y: auto !important;   /* El contenido sí baja */
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* 2. EL ARREGLO DE LA "X": Tamaño fijo y posición absoluta */
+.btn-cerrar-modal {
+    position: absolute !important; 
+    top: 5px !important;
+    right: 5px !important;
+    width: 35px !important;   /* Ancho fijo */
+    height: 35px !important;  /* Alto fijo */
+    min-width: 35px !important;
+    min-height: 35px !important;
+    background: rgba(0, 0, 0, 0.3) !important; /* Fondo sutil para que se vea */
+    color: white !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    border-radius: 4px !important;
+    font-size: 20px !important;
+    z-index: 9999 !important; /* Por encima de todo */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    line-height: 1 !important;
+}
+
+/* 3. La franja roja superior (Estética) */
+.modal-content-premium::before {
+    content: "";
+    display: block !important;
+    width: 100% !important;
+    height: 45px !important;
+    background: #8b0000 !important;
+    border-bottom: 2px solid #c5a059 !important;
+}
+
+/* 4. LA LÍNEA DE MILICIA (Scroll Horizontal Forzado) */
+.evoluciones-flex-container {
+    display: flex !important;
+    flex-direction: row !important; /* FUERZA FILA */
+    flex-wrap: nowrap !important;   /* PROHIBE BAJAR */
+    overflow-x: auto !important;    /* ACTIVA EL DESLIZAMIENTO */
+    gap: 10px !important;
+    padding: 20px 15px !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 5. Asegurar que cada unidad NO SE ENCOJA */
+.evo-column {
+    flex: 0 0 130px !important; /* Cada etapa ocupa 130px pase lo que pase */
+    max-width: 130px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.evo-image-frame {
+    width: 60px !important;
+    height: 60px !important;
+}
+
+.evo-unit-img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.evo-connector {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 25px !important;
+    margin-top: 25px !important;
+    font-size: 1rem !important;
+    color: #c5a059 !important;
+}
+
+/* 6. CORRECCIÓN ENCICLOPEDIA (Imagen 1) */
+/* Evita que el menú de categorías se coma el título */
+.enciclopedia-sidebar {
+    position: relative !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    background: #1a1a1a !important;
+    z-index: 10 !important;
+}
+
+.cat-item {
+    white-space: nowrap !important;
+    padding: 10px 15px !important;
+}
 }

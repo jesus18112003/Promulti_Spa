@@ -871,3 +871,4 @@ function resetParallax(card) {
     const render = card.querySelector('.unidad-render');
     if (render) render.style.transform = `translateX(0) translateY(0) scale(1)`;
 }
+
