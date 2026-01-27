@@ -492,7 +492,7 @@ function cargarSeccion(seccion) {
                         </div>
                         <div class="card-parallax">
                             <div class="card-cuerpo">
-                                <div class="escudo-wrapper"><img src="assets/img/cab.webp" class="img-parallax"></div>
+                                <div class="escudo-wrapper"><img src="assets/img/Cab.webp" class="img-parallax"></div>
                                 <div class="info-unidad">
                                     <h3>Caballero Teutón</h3>
                                     <p>Infantería de élite con la armadura más resistente.</p>
