@@ -582,16 +582,35 @@ function cargarSeccion(seccion) {
                 </section>
 
                 <section class="galeria-seccion fade-in">
-                    <div class="slider-header"><h2 class="titulo-siglos">GALERÍA DE BATALLAS</h2></div>
-                    <div class="galeria-grid">
-                        <div class="foto foto-grande"><img src="assets/img/asiab.webp"></div>
-                        <div class="foto foto-peque"><img src="assets/img/asiaa.jpg"></div>
-                        <div class="foto foto-peque"><img src="assets/img/asiac.jpg"></div>
-                        <div class="foto foto-ancha"><img src="assets/img/naval.jpg"></div>
-                        <div class="foto foto-alta"><img src="assets/img/castle.jpg"></div>
-                        <div class="foto foto-relleno"><img src="assets/img/eup.jpg"></div>
-                    </div>
-                </section>
+    <div class="slider-header"><h2 class="titulo-siglos">GALERÍA DE BATALLAS</h2></div>
+    <div class="galeria-grid">
+        <div class="foto foto-grande"><img src="assets/img/asiab.webp"></div>
+        
+        <div class="foto foto-peque"><img src="assets/img/asiaa.jpg"></div>
+        
+        <div class="foto foto-ancha video-item">
+            <video autoplay muted loop playsinline>
+                <source src="assets/img/batle2.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"><span>CLIP</span></div>
+        </div>
+
+        <div class="foto foto-peque"><img src="assets/img/asiac.jpg"></div>
+
+        <div class="foto foto-ancha"><img src="assets/img/naval.jpg"></div>
+
+        <div class="foto foto-ancha video-item">
+            <video autoplay muted loop playsinline>
+                <source src="assets/img/batle.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"><span>GAMEPLAY</span></div>
+        </div>
+
+        <div class="foto foto-alta"><img src="assets/img/castle.jpg"></div>
+
+        <div class="foto foto-relleno"><img src="assets/img/eup.jpg"></div>
+    </div>
+</section>
 
                 <section class="escena-competitiva fade-in">
                     <div class="contenedor-negro-central">
