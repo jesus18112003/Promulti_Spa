@@ -15,6 +15,8 @@ body {
     color: var(--blanco-pergamino);
     margin: 0;
     line-height: 1.6;
+    overflow-x: hidden !important;
+    width: 100%;
 }
 
 /* 2. NAVEGACIÓN (NAVBAR) */
@@ -1183,70 +1185,410 @@ main {
         width: 90%;
         font-size: 14px;
     }
-}
-
-@media (max-width: 768px) {
-    /* Convertir el sidebar en una barra horizontal superior */
-    .app-container {
-        flex-direction: column;
+    
+    .unidades-container, 
+    .unidades-grid, 
+    .elite-grid { 
+        display: flex !important;
+        flex-direction: column !important; /* Alinea verticalmente */
+        align-items: center !important;    /* Centra las tarjetas */
+        gap: 20px !important;
+        width: 100% !important;
+        overflow-x: hidden !important;     /* Elimina el desborde lateral */
     }
 
-    .sidebar {
+    /* Ajusta el ancho de cada tarjeta individual */
+    .unidad-card, 
+    .elite-card {
+        width: 90% !important;  /* Casi todo el ancho del celular */
+        max-width: 320px !important;
+        margin: 0 auto !important;
+        flex: none !important;  /* Evita que se encojan o estiren raro */
+    }
+
+    /* Ajuste de imagen dentro de la tarjeta para que no flote fuera */
+    .unidad-card img, 
+    .elite-card img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Título de la sección para que no se corte */
+    .seccion-titulo {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+        padding: 0 10px !important;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Forzamos al contenedor principal a no dejar pasar nada al costado */
+    /* CORRECCIÓN: Se añade margin: 0 y box-sizing para evitar el desplazamiento */
+    section, main, .unidades-seccion, #contenedor-principal {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* EL CORAZÓN DEL PROBLEMA: El contenedor de las tarjetas */
+    /* 1. Forzamos al contenedor a ser una columna vertical */
+    .unidades-container, 
+    .unidades-grid, 
+    .elite-grid, 
+    #grid-unidades,
+    .unidades-grid-scroll { 
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;
+        gap: 25px !important;
+        width: 100% !important;
+        padding: 20px 10px !important;
+        overflow-x: hidden !important;
+        margin: 0 auto !important; /* Asegura centrado */
+    }
+
+    /* 2. UNIFICACIÓN DE TARJETAS (Punto 1 corregido) */
+    .unidad-card, 
+    .elite-card,
+    .card-unidad,
+    .unidad-card-premium,
+    .unidad-card-parallax {
+        width: 90% !important;
+        max-width: 320px !important;
+        margin: 0 auto !important;
+        flex: none !important;
+        position: relative !important;
+        left: 0 !important;
+        transform: none !important; /* Evita que el parallax rompa el ancho en móvil */
+    }
+
+    /* 4. Títulos y textos: Evitamos que se corten */
+    .unidad-card h3, .elite-card h3 {
+        font-size: 1.4rem !important;
+        white-space: normal !important; /* Permite que el nombre use 2 líneas */
+        text-align: center !important;
+    }
+
+    /* 5. Eliminamos cualquier scroll lateral rebelde del body */
+    /* CORRECCIÓN: Se añade margin y padding 0 para centrar la visualización */
+    body, html {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Títulos que se cortan */
+    .unidad-card h3, .elite-card h3 {
+        font-size: 1.2rem !important;
+        white-space: normal !important; /* Permite que el texto salte de línea */
+    }
+    
+    /* 1. ARREGLO DE NÚMEROS GIGANTES (Imagen 3) */
+    .stats-franja {
+        flex-direction: column !important; /* Los pone uno debajo de otro */
+        gap: 40px !important;
+        padding: 20px 0 !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+    }
+
+    .stat-number {
+        font-size: 2.8rem !important; /* Reduce el tamaño para que no desborde */
+        margin: 0 !important;
+    }
+
+    .stat-item p {
+        font-size: 0.7rem !important;
+        letter-spacing: 1px !important;
+    }
+
+    /* 2. ARREGLO DE LAS EDADES (Imagen 2) */
+    .carousel-content {
+        flex-direction: column !important; /* Imagen arriba, texto abajo */
+        height: auto !important;
+        min-height: unset !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .edad-slide.active {
+        flex-direction: column !important;
+    }
+
+    .slide-visual {
+        width: 100% !important;
+        padding: 20px !important;
+    }
+
+    .slide-visual img {
+        max-width: 150px !important; /* Achica la imagen para que quepa el texto */
+    }
+
+    .edad-info {
+        width: 100% !important;
+        padding: 20px !important;
+        text-align: center !important;
+    }
+
+    .edad-titulo {
+        font-size: 1.5rem !important; /* "EDAD DE CASTILLOS" más pequeño */
+    }
+
+    .edad-descripcion {
+        font-size: 0.9rem !important;
+        max-width: 100% !important;
+    }
+
+    /* 3. ARREGLO DE ICONOS (Castillos, Monjes, etc.) */
+    .especialidades-grid {
+        grid-template-columns: 1fr 1fr !important; /* 2 columnas limpias */
+        gap: 10px !important;
+        justify-items: center;
+    }
+
+    /* 4. ARREGLO DEL NAVBAR (Imagen 4) */
+    .nav-container {
+        flex-direction: column !important;
+        padding: 10px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    nav ul {
+        gap: 10px !important;
+        margin-top: 10px !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        padding: 0 !important;
+    }
+
+    nav a {
+        font-size: 0.65rem !important; /* Textos de menú más pequeños */
+    }
+
+    /* 5. ARREGLO DE LA ENCICLOPEDIA (Imagen 1) */
+    .enciclopedia-container {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .enciclopedia-sidebar {
         width: 100% !important;
         height: auto !important;
         flex-direction: row !important;
-        overflow-x: auto; /* Permite deslizar las categorías hacia los lados */
-        padding: 10px;
-        gap: 15px;
-        position: sticky;
-        top: 0;
-        background: rgba(0,0,0,0.95);
-        z-index: 1000;
+        overflow-x: auto !important; /* Scroll lateral para categorías */
+        padding: 5px !important;
     }
 
     .cat-item {
-        padding: 8px 15px;
-        font-size: 0.8rem;
-        white-space: nowrap; /* Evita que el texto se parta en dos líneas */
-    }
-}
-
-@media (max-width: 768px) {
-    /* Ajuste de títulos principales */
-    h1, .titulo-dorado {
-        font-size: 1.8rem !important;
-        text-align: center;
+        padding: 10px 15px !important;
+        font-size: 0.75rem !important;
+        white-space: nowrap !important;
     }
 
-    /* Ajuste de los contadores/stats de la Imagen 3 */
-    .stats-container { /* Ajusta este nombre a tu clase de números */
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
+    .unidades-grid-scroll {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important;
+        padding: 10px !important;
+        gap: 10px !important;
     }
 
-    .stats-number {
-        font-size: 1.5rem !important;
+    /* 1. Forzamos a que el contenedor NO sea ancho */
+    .unidades-container, 
+    .unidades-grid, 
+    .elite-grid,
+    #unidades-elite-container { 
+        display: block !important; 
+        width: 100% !important;
+        max-width: 100vw !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        overflow: hidden !important;
     }
-}
 
-@media (max-width: 768px) {
+    /* 2. Tarjetas: una debajo de otra y centradas */
+    .unidad-card, 
+    .elite-card,
+    .card {
+        display: block !important;
+        width: 85% !important; 
+        margin: 60px auto !important; 
+        float: none !important;
+        position: relative !important;
+        left: 0 !important;
+        min-width: unset !important;
+    }
+
+    /* 3. El Caballero: lo metemos en su caja */
+    .unidad-card img, 
+    .elite-card img,
+    .caballero-img {
+        width: 100% !important;
+        max-width: 200px !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        top: 0 !important;
+        transform: translateY(-20px) !important;
+    }
+
+    /* 4. Arreglo de los textos que se cortan */
+    .unidad-card h3, 
+    .elite-card h3, 
+    .unidad-card-premium h3, 
+    .info-unidad h3,
+    .card-info-overlay h3 {
+        font-size: 1.25rem !important;
+        margin-bottom: 10px !important;
+        white-space: normal !important;
+        text-align: center !important;
+        line-height: 1.2 !important;
+        width: 100% !important;
+    }
+
+    .unidad-card p, 
+    .info-unidad p, 
+    .desc-mini {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 15px !important;
+        padding: 0 10px !important;
+    }
+
+    /* Ajuste de etiquetas (Tags) para que no se amontonen */
+    .etiquetas, .stats-footer {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+
+    /* 1. Contenedor Principal: Eliminamos el desborde lateral */
+    .seccion-unidades-premium {
+        padding: 40px 10px !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 auto !important;
+    }
+
+    /* 2. El Contenedor de Cartas */
+    .contenedor-cartas-parallax {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 50px !important;
+        width: 100% !important;
+        height: auto !important;
+        perspective: none !important;
+        margin: 0 auto !important;
+    }
+
+    /* 3. Las Cartas Individuales */
     .card-parallax {
         width: 90% !important;
-        margin: 10px auto;
-        height: auto;
-        min-height: 250px;
+        max-width: 320px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        left: 0 !important;
+        transform: none !important;
     }
 
-    .card-content {
-        padding: 15px;
+    /* 4. El Cuerpo de la Carta y la Imagen */
+    .card-cuerpo {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 20px !important;
     }
 
-    /* Ajustar los iconos inferiores que se ven amontonados */
-    .card-icons-footer { 
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5px;
-        font-size: 0.7rem;
+    .escudo-wrapper {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        margin-bottom: 15px !important;
+    }
+
+    .img-parallax {
+        width: 180px !important;
+        height: auto !important;
+        position: static !important;
+        transform: translateY(-30px) !important;
+    }
+
+    /* 5. Ajuste de Textos y Etiquetas */
+    .info-unidad h3 {
+        font-size: 1.5rem !important;
+        margin: 10px 0 !important;
+        white-space: normal !important;
+    }
+
+    .etiquetas {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 5px !important;
+    }
+
+    .tag-rojo, .tag-dorado {
+        font-size: 0.7rem !important;
+        padding: 4px 8px !important;
+    }
+
+    .contenedor-negro-central {
+        width: 95% !important;
+        padding: 40px 20px !important;
+        margin: 0 auto !important;
+        left: 0 !important; /* Asegura que no esté desplazado */
+    }
+
+    /* 2. ARREGLO DE TÍTULOS GIGANTES */
+    .escena-competitiva h2, 
+    .contenedor-negro-central h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word !important;
+        text-align: center !important;
+    }
+
+    /* 3. TRANSFORMACIÓN DE LA GRID A COLUMNA VERTICAL */
+    .competitivo-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 30px !important;
+        align-items: center !important;
+    }
+
+    /* 4. ELIMINACIÓN DE BORDES LATERALES */
+    .info-item.border-x {
+        border-left: none !important;
+        border-right: none !important;
+        border-top: 1px solid rgba(197, 160, 89, 0.2);
+        border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        padding: 20px 0 !important;
+        width: 100% !important;
+    }
+
+    .info-item {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .info-item h3 {
+        font-size: 1rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    .info-item p {
+        font-size: 0.85rem !important;
+        max-width: 250px;
+        margin: 0 auto !important;
     }
 }
