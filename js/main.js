@@ -464,13 +464,13 @@ function cargarSeccion(seccion) {
                         <img src="assets/img/CivIcon-teuton.webp" alt="Teutones">
                         <img src="assets/img/CivIcon-briton.webp" alt="Britanos">
                         <img src="assets/img/CivIcon-poles.webp" alt="Polacos">
-                        <img src="assets/img/CivIcon-lit.webp" alt="Lituanos">
+                        <img src="assets/img/CivIcon-Lit.webp" alt="Lituanos">
                         <img src="assets/img/CivIcon-Portu.webp" alt="Portugueses">
                         <img src="assets/img/CivIcon-yur.webp" alt="Yurchens">
                         <img src="assets/img/CivIcon-Chinos.webp" alt="Chinos">
                         <img src="assets/img/CivIcon-tatars.webp" alt="Tartaros">
                         <img src="assets/img/CivIcon-cumans.webp" alt="Cumanos">
-                        <img src="assets/img/CivIcon-espa.webp" alt="Espannoles">
+                        <img src="assets/img/CivIcon-Espa.webp" alt="Espannoles">
                         <img src="assets/img/CivIcon-ita.webp" alt="Italianos">
                         <img src="assets/img/CivIcon-viet.webp" alt="Vietnamitas">
                     </div>

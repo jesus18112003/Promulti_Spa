@@ -1117,3 +1117,71 @@ main {
     opacity: 0.8;
 }
 
+@media (max-width: 768px) {
+    /* 1. Ajuste del Layout Principal */
+    .app-container {
+        flex-direction: column; /* Sidebar arriba, contenido abajo */
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        flex-direction: row; /* Categorías en horizontal */
+        overflow-x: auto; /* Scroll lateral para las categorías */
+        white-space: nowrap;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .sidebar-logo { display: none; } /* Ocultar logo en móvil para ganar espacio */
+
+    /* 2. Grid de Unidades */
+    .unidades-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Tarjetas más pequeñas en 2 columnas */
+        gap: 12px;
+        padding: 10px;
+    }
+
+    /* 3. Ajuste de las Tarjetas */
+    .card-parallax {
+        height: 200px; /* Menor altura para que no ocupen toda la pantalla */
+    }
+
+    .card-content h3 {
+        font-size: 0.9rem;
+    }
+
+    .stat-box span {
+        font-size: 0.7rem;
+    }
+
+    /* 4. Modal de Evoluciones (El gran problema) */
+    .modal-content-premium {
+        width: 95%;
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .evoluciones-flex-container {
+        flex-direction: column; /* Evoluciones una debajo de otra en móvil */
+        align-items: center;
+    }
+
+    .evo-connector {
+        transform: rotate(90deg); /* La flecha ahora apunta hacia abajo */
+        margin: 10px 0;
+    }
+
+    .evo-column {
+        width: 100%;
+    }
+
+    /* 5. Buscador */
+    .search-box-wrapper input {
+        width: 90%;
+        font-size: 14px;
+    }
+}
+
