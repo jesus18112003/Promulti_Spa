@@ -3,6 +3,85 @@ let slideActual = 0;
 let intervaloCarrusel; 
 
 // BASE DE DATOS LOCAL (Para la Enciclopedia / Evaluación 2)
+
+const civilizacionesAoE = [
+    { 
+        id: 'franks', 
+        nombre: "LOS FRANCOS", 
+        icono: "assets/img/CivIcon-Francos.webp",
+        imgCastillo: "assets/img/castillos/castillo_franco.png",
+        tipo: "Civilización de caballería",
+        audio: "assets/audio/mongols-theme.mp3",
+        bonos: ["Castillos cuestan un -25% de piedra.", "Caballería tiene +20% de HP.", "Recolección de bayas un 15% más rápida."],
+        unidad: "Lanzador de Hachas",
+        imgUnidad: "assets/img/unidad-franco.png",
+        imgMaravilla: "assets/img/maravilla/mongol.webp",
+        nombreMaravilla: "Gran Tienda de Genghis Khan",
+        tecsUnicas: [
+            {
+                nombre: "Nomadas",
+                efecto: "Mantiene la población aunque no haya casas.",
+                img: "assets/img/unidades/tec.webp"
+            },
+            {
+                nombre: "Instrucción militar",
+                efecto: "El asedio se mueve un 50% más rápido.",
+                img: "assets/img/unidades/tec.webp"
+            }
+        ]
+    },
+    { 
+        id: 'mongols', 
+        nombre: "LOS MONGOLES", 
+        icono: "assets/img/CivIcon-Mongoles.webp",
+        imgCastillo: "assets/img/castillos/mongol.webp",
+        tipo: "Civilización de arqueros a caballo",
+        audio: "assets/audio/mongol.mp3",
+        bonos: ["Arqueros a caballo disparan 25% más rápido.", "Cazadores trabajan un 40% más rápido.", "Caballería ligera 20/30 % PR más en la Edad de los Castillos y la Edad Imperial"],
+        unidad: "Mangudai",
+        imgUnidad: "assets/img/unidades/mangu.webp",
+        imgMaravilla: "assets/img/maravilla/mongol.webp",
+        nombreMaravilla: "Gran Tienda de Genghis Khan",
+        tecsUnicas: [
+            {
+                nombre: "Nomadas",
+                efecto: "Mantiene la población aunque no haya casas.",
+                img: "assets/img/unidades/tec.webp"
+            },
+            {
+                nombre: "Instrucción militar",
+                efecto: "El asedio se mueve un 50% más rápido.",
+                img: "assets/img/unidades/tec.webp"
+            }
+        ]
+    },
+    { 
+        id: 'aztecs', 
+        nombre: "LOS AZTECAS", 
+        icono: "assets/img/CivIcon-Aztecas.webp",
+        imgCastillo: "assets/img/castillos/castillo_franco.png",
+        tipo: "Civilización de infantería",
+        audio: "assets/audio/mongols-theme.mp3",
+        bonos: ["Aldeanos cargan +3 de recursos.", "Unidades militares se crean 11% más rápido."],
+        unidad: "Guerrero Jaguar",
+        imgUnidad: "assets/img/unidad-franco.png",
+        imgMaravilla: "assets/img/maravilla/mongol.webp",
+        nombreMaravilla: "Gran Tienda de Genghis Khan",
+        tecsUnicas: [
+            {
+                nombre: "Nomadas",
+                efecto: "Mantiene la población aunque no haya casas.",
+                img: "assets/img/unidades/tec.webp"
+            },
+            {
+                nombre: "Instrucción militar",
+                efecto: "El asedio se mueve un 50% más rápido.",
+                img: "assets/img/unidades/tec.webp"
+            }
+        ]
+    }
+];
+
 const unidadesData = [
     { 
         id: 'milicia', 
@@ -112,6 +191,95 @@ const unidadesData = [
             }
         ]
     },
+    {
+        id: 'catafracta',
+        nombre: 'Catafracta',
+        imagen: 'assets/img/unidades/cata.webp',
+        tipo: 'Caballeria',
+        hp: 110, 
+        atk: 9, 
+        arm: '2/1',
+        especial: 'ÚNICA: BIZANTINOS',
+        desc: 'Caballería pesada bizantina con armadura de placas. Excelente contra infantería.',
+        evoluciones: [
+            { 
+                nombre: 'Catafracta', 
+                costo: '60A 75O', 
+                mejora: 'Unidad Base', 
+                stats: '110 HP / 9 ATK', 
+                img: 'assets/img/unidades/cata.webp' 
+            },
+            { 
+                nombre: 'Catafracta de Élite', 
+                costo: '1600A 800O', 
+                mejora: '+40 HP, +3 ATK', 
+                stats: '150 HP / 12 ATK', 
+                img: 'assets/img/unidades/cata2.webp' 
+            },
+            { 
+                nombre: 'Logística', 
+                costo: '1000A 600O', 
+                mejora: 'Daño por pisoteo', 
+                stats: 'Daño en área', 
+                img: 'assets/img/unidades/tec.webp',
+                especial: 'TECNOLOGÍA ÚNICA' 
+            }
+        ]
+    },
+    {
+        id: 'coustiller',
+        nombre: 'Coustillier',
+        imagen: 'assets/img/unidades/cous.webp',
+        tipo: 'Caballeria',
+        hp: 115, 
+        atk: 8, 
+        arm: '2/2',
+        especial: 'ÚNICA: BORGOÑESES',
+        desc: 'Caballería media borgoñes con un ataque de carga. Excelente contra infantería y arqueros.',
+        evoluciones: [
+            { 
+                nombre: 'Coustillier', 
+                costo: '60A 75O', 
+                mejora: 'Unidad Base', 
+                stats: '115 HP / 8 ATK', 
+                img: 'assets/img/unidades/cous.webp' 
+            },
+            { 
+                nombre: 'Coustillier de Élite', 
+                costo: '1600A 800O', 
+                mejora: '+30 HP, +3 ATK', 
+                stats: '145 HP / 11 ATK', 
+                img: 'assets/img/unidades/cous2.webp' 
+            },
+        ]
+    },
+    {
+        id: 'pagoda',
+        nombre: 'Pagoda de hierro',
+        imagen: 'assets/img/unidades/iron.webp',
+        tipo: 'Caballeria',
+        hp: 115, 
+        atk: 12, 
+        arm: '1/3',
+        especial: 'ÚNICA: YURCHENS',
+        desc: 'Caballería pesada yurchen bloquea 1 ataque cada cierto tiempo. Excelente contra arqueros y otras caballerías.',
+        evoluciones: [
+            { 
+                nombre: 'Pagoda de hierro', 
+                costo: '60A 75O', 
+                mejora: 'Unidad Base', 
+                stats: '115 HP / 12 ATK', 
+                img: 'assets/img/unidades/iron.webp' 
+            },
+            { 
+                nombre: 'Pagoda de hierro de Élite', 
+                costo: '1600A 800O', 
+                mejora: '+25 HP, +1 ATK', 
+                stats: '140 HP / 13 ATK', 
+                img: 'assets/img/unidades/iron2.webp' 
+            },
+        ]
+    },    
 
     { 
         id: 'jinete', 
@@ -134,7 +302,6 @@ const unidadesData = [
         }
         ]
     },
-
     { 
         id: 'camello', 
         nombre: 'Línea de Camello', 
@@ -732,21 +899,36 @@ function cargarSeccion(seccion) {
         }, 100);
 
     } else if (seccion === 'civilizaciones') {
-        detenerAutoplay();
-        contenedor.innerHTML = `
-            <section id="seccion-civilizaciones" class="fade-in">
-                <h2 class="titulo-dorado" style="text-align:center">CIVILIZACIONES</h2>
-                <div class="escudos-container">
-                    <img src="assets/img/CivIcon-Francos.webp" class="escudo-btn" onclick="mostrarDetalleCiv('franks')">
-                    <img src="assets/img/CivIcon-Mongoles.webp" class="escudo-btn" onclick="mostrarDetalleCiv('mongols')">
-                    <img src="assets/img/CivIcon-Aztecas.webp" class="escudo-btn" onclick="mostrarDetalleCiv('aztecs')">
-                </div>
-                <div id="detalle-civilizacion" class="detalle-box">
-                    <p>Selecciona una civilización para ver sus bonificaciones.</p>
-                </div>
-            </section>
-        `;
-    } else if (seccion === 'unidades') {
+    detenerAutoplay();
+    
+    // Generar las cartas desde el array
+    const cardsHTML = civilizacionesAoE.map(civ => `
+        <div class="civ-card" onclick="mostrarDetalleCiv('${civ.id}')">
+            <img src="${civ.icono}" alt="${civ.nombre}">
+            <span>${civ.nombre.replace('LOS ', '')}</span>
+        </div>
+    `).join('');
+
+    contenedor.innerHTML = `
+        <section id="seccion-civilizaciones" class="fade-in">
+            <div class="enciclopedia-header">
+                <h2 class="titulo-dorado-enc">ENCICLOPEDIA DE CIVILIZACIONES</h2>
+                <p class="subtitulo-rojo-enc">SELECCIONA TU LINAJE PARA LA VICTORIA</p>
+            </div>
+            
+            <div class="civ-grid">
+                ${cardsHTML}
+            </div>
+
+            <div id="side-panel-civ" class="side-panel">
+                <button type="button" class="btn-cerrar-panel" onclick="cerrarPanelCiv()">&times;</button>
+                <div id="contenido-panel-civ"></div>
+            </div>
+            
+            <div id="overlay-negro" class="overlay-hidden" onclick="cerrarPanelCiv()"></div>
+        </section>
+    `;
+} else if (seccion === 'unidades') {
         detenerAutoplay();
         contenedor.innerHTML = `
             <div class="enciclopedia-container fade-in">
@@ -878,31 +1060,36 @@ function renderizarCartasEnciclopedia(lista) {
     const grid = document.getElementById('grid-unidades');
     if (!grid) return;
     
-    grid.innerHTML = lista.map(u => `
-    <div class="unidad-card-parallax" onmousemove="efectoParallax(event, this)" onmouseleave="resetParallax(this)" onclick="window.abrirModalEvoluciones('${u.id}')">
-        <div class="card-bg"></div>
-        
-        <div class="unidad-render-container">
-            <img src="${u.imagen || 'assets/img/units/milicia.png'}" class="unidad-render" alt="${u.nombre}">
-        </div>
+    grid.innerHTML = lista.map(u => {
+        // Si la unidad tiene el campo 'especial', aplicamos estilos VIP
+        const claseEspecial = u.especial ? 'unidad-especial-card' : '';
+        const badgeUnica = u.especial ? `<div class="badge-card-unica">${u.especial}</div>` : '';
 
-        <div class="card-info-overlay">
-            <h3 class="titulo-unidad-parallax">${u.nombre}</h3>
+        return `
+        <div class="unidad-card-parallax ${claseEspecial}" onmousemove="efectoParallax(event, this)" onmouseleave="resetParallax(this)" onclick="window.abrirModalEvoluciones('${u.id}')">
+            <div class="card-bg"></div>
             
-            <div class="stats-grid-parallax">
-                <span><i class="fas fa-heart stat-hp"></i>${u.hp}</span>
-                <span><i class="fas fa-fist-raised stat-atk"></i>${u.atk}</span>
-                <span><i class="fas fa-shield-alt stat-def"></i>${u.arm}</span>
+            ${badgeUnica}
+            
+            <div class="unidad-render-container">
+                <img src="${u.imagen || 'assets/img/units/milicia.png'}" class="unidad-render" alt="${u.nombre}">
             </div>
 
-            <p class="desc-parallax">${u.desc}</p>
-            
-            <div class="footer-action-parallax">
-                <span class="ver-mejoras-txt">VER MEJORAS ★</span>
+            <div class="card-info-overlay">
+                <h3 class="titulo-unidad-parallax">${u.nombre}</h3>
+                <div class="stats-grid-parallax">
+                    <span><i class="fas fa-heart stat-hp"></i>${u.hp}</span>
+                    <span><i class="fas fa-fist-raised stat-atk"></i>${u.atk}</span>
+                    <span><i class="fas fa-shield-alt stat-def"></i>${u.arm}</span>
+                </div>
+                <p class="desc-parallax">${u.desc}</p>
+                <div class="footer-action-parallax">
+                    <span class="ver-mejoras-txt">${u.especial ? 'TECNOLOGÍA ÚNICA ★' : 'VER MEJORAS ★'}</span>
+                </div>
             </div>
         </div>
-    </div>
-`).join('');
+        `;
+    }).join('');
 }
 // LÓGICA CARRUSEL Y AUXILIARES (SE MANTIENEN IGUAL)
 function moverCarrusel(direccion) {
@@ -946,17 +1133,119 @@ function ejecutarConteoIndividual(id, meta) {
     }, 30);
 }
 
-function mostrarDetalleCiv(civ) {
-    const detalle = document.getElementById('detalle-civilizacion');
-    const datosCivs = {
-        'franks': { nombre: "Francos", bonos: ["Castillos -25%", "Caballería +20% HP"], unidad: "Lanzador de hachas" },
-        'mongols': { nombre: "Mongoles", bonos: ["Arqueros a caballo +25% rápido"], unidad: "Mangudai" },
-        'aztecs': { nombre: "Aztecas", bonos: ["Aldeanos cargan +3"], unidad: "Guerrero Jaguar" }
-    };
-    const s = datosCivs[civ];
-    detalle.innerHTML = `<div class="info-card fade-in"><h3>${s.nombre}</h3><ul>${s.bonos.map(b => `<li>${b}</li>`).join('')}</ul><p><strong>Unidad:</strong> ${s.unidad}</p></div>`;
+function mostrarDetalleCiv(idCiv) {
+    const panel = document.getElementById('side-panel-civ');
+    const overlay = document.getElementById('overlay-negro');
+    const contenido = document.getElementById('contenido-panel-civ');
+    
+    // Buscamos la civilización en el array
+    const s = civilizacionesAoE.find(c => c.id === idCiv);
+    if (!s) return;
+
+    // Rellenamos el contenido usando una sola estructura para evitar que se borren elementos
+    contenido.innerHTML = `
+        <div class="panel-scroll">
+            <div class="civ-portrait-box">
+                <img src="${s.icono}" class="img-portrait-large">
+            </div>
+            
+            <h2 class="panel-titulo">${s.nombre}</h2>
+            <p class="panel-subtitulo">${s.tipo}</p>
+
+            <div class="audio-player-container">
+                <div class="audio-label">TEMA MUSICAL</div>
+                <audio controls controlsList="nodownload" class="mini-audio">
+                    <source src="${s.audio || ''}" type="audio/mpeg">
+                    Tu navegador no soporta el audio.
+                </audio>
+            </div>
+
+            <div class="panel-seccion castillo-visual-container">
+    <h4>ARQUITECTURA ÚNICA</h4>
+    <div class="castillo-frame">
+        <img src="${s.imgCastillo}" class="img-castillo-display">
+    </div>
+</div>
+            
+            <div class="panel-seccion">
+                <h4>BONIFICACIONES</h4>
+                <ul class="panel-list">
+                    ${(s.bonos || []).map(b => `<li>${b}</li>`).join('')}
+                </ul>
+            </div>
+
+            <div class="panel-seccion">
+                <h4>UNIDAD ÚNICA</h4>
+                <div class="unidad-box-premium">
+                    <div class="unidad-img-wrapper">
+                        <img src="${s.imgUnidad}" alt="${s.unidad}" class="unidad-thumbnail">
+                    </div>
+                    <div class="unidad-info">
+                        <span class="unidad-nombre">${s.unidad}</span>
+                        <p class="unidad-descripcion">Unidad de élite de los ${s.nombre.replace('LOS ', '')}.</p>
+                    </div>
+                </div>
+            </div>
+
+           <div class="panel-seccion">
+                <h4>TECNOLOGÍAS ÚNICAS</h4>
+                <div class="tecs-container">
+                    ${(s.tecsUnicas || []).map(tec => `
+                        <div class="tec-item-premium">
+                            <div class="tec-img-wrapper">
+                                <img src="${tec.img}" class="tec-thumbnail">
+                            </div>
+                            <div class="tec-info">
+                                <span class="tec-nombre">${tec.nombre}</span>
+                                <p class="tec-efecto">${tec.efecto}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+
+            <div class="panel-seccion">
+    <h4>MARAVILLA</h4>
+    <div class="maravilla-frame">
+        <img src="${s.imgMaravilla}" class="img-maravilla-display">
+        <div class="maravilla-caption">${s.nombreMaravilla || 'Maravilla Imperial'}</div>
+    </div>
+</div>
+
+            <div class="espaciador-final" style="height: 150px; width: 100%;"></div>
+        </div> `;
+
+    // ACTIVACIÓN: Forzamos la visualización y animaciones
+    panel.style.display = "block"; 
+    setTimeout(() => {
+        panel.classList.add('active');
+        overlay.classList.add('overlay-visible');
+        overlay.classList.remove('overlay-hidden');
+    }, 10);
 }
 
+// Función para cerrar el panel
+function cerrarPanelCiv() {
+    const panel = document.getElementById('side-panel-civ');
+    const overlay = document.getElementById('overlay-negro');
+
+    const audio = panel.querySelector('audio');
+    if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+    }
+    
+    panel.classList.remove('active');
+    overlay.classList.remove('overlay-visible');
+    overlay.classList.add('overlay-hidden');
+    
+    // Opcional: ocultar del DOM tras la animación
+    setTimeout(() => {
+        if (!panel.classList.contains('active')) {
+            panel.style.display = "none";
+        }
+    }, 500);
+}
 document.addEventListener("DOMContentLoaded", () => cargarSeccion('inicio'));
 
 function efectoParallax(e, card) {
