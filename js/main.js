@@ -612,6 +612,47 @@ function cargarSeccion(seccion) {
     </div>
 </section>
 
+                <section class="recursos-seccion fade-in">
+    <div class="slider-header">
+        <h2 class="titulo-siglos">GESTIÓN DE RECURSOS</h2>
+        <p class="subtitulo-dorado">LOS PILARES DE TU ECONOMÍA</p>
+    </div>
+
+    <div class="recursos-grid">
+        <div class="recurso-card">
+            <div class="recurso-icon">
+                <img src="assets/img/tree.png" alt="Madera">
+            </div>
+            <h3>MADERA</h3>
+            <p>Esencial para la construcción de edificios, barcos y unidades de asedio.</p>
+        </div>
+
+        <div class="recurso-card">
+            <div class="recurso-icon">
+                <img src="assets/img/cesped.png" alt="Alimento">
+            </div>
+            <h3>ALIMENTO</h3>
+            <p>Fundamental para entrenar aldeanos, infantería y avanzar de edad.</p>
+        </div>
+
+        <div class="recurso-card">
+            <div class="recurso-icon">
+                <img src="assets/img/gold.png" alt="Oro">
+            </div>
+            <h3>ORO</h3>
+            <p>Requerido para unidades avanzadas, tecnologías superiores y comercio.</p>
+        </div>
+
+        <div class="recurso-card">
+            <div class="recurso-icon">
+                <img src="assets/img/stone.png" alt="Piedra">
+            </div>
+            <h3>PIEDRA</h3>
+            <p>Vital para la construcción de castillos, murallas y torres defensivas.</p>
+        </div>
+    </div>
+</section>
+
                 <section class="escena-competitiva fade-in">
                     <div class="contenedor-negro-central">
                         <h2 class="titulo-dorado">ESCENA COMPETITIVA</h2>
