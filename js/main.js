@@ -4,83 +4,610 @@ let intervaloCarrusel;
 
 // BASE DE DATOS LOCAL (Para la Enciclopedia / Evaluación 2)
 
+
 const civilizacionesAoE = [
     { 
         id: 'franks', 
-        nombre: "LOS FRANCOS", 
+        nombre: "LOS FRANCOS",
+        region: "Europa Occidental",
         icono: "assets/img/CivIcon-Francos.webp",
         imgCastillo: "assets/img/castillos/frank.webp",
         tipo: "Civilización de caballería",
-        audio: "assets/audio/mongols-theme.mp3",
-        bonos: ["Castillos cuestan un -10%/-15% de piedra en castillo/imperial.", "Caballería tiene +20% de HP.", "Recolección de bayas un 15% más rápida.","Mejora de Granjas gratis."],
-        unidad: "Lanzador de Hachas",
-        imgUnidad: "assets/img/unidades/frank.webp",
+        audio: "assets/audio/frank.mp3",
+        bonos: ["Castillos cuestan un -10%/-15% de piedra en castillo/imperial.", "Caballería tiene +20% de HP.", "Recolección de bayas un 15% más rápida.","Mejora de Granjas gratis.", "La línea de caballeros gana +2 de campo de visión"],
+        unidadesUnicas: [{ nombre: "Lanzador de Hachas", img: "assets/img/unidades/frank.webp" }],
         imgMaravilla: "assets/img/maravilla/frank.webp",
         nombreMaravilla: "Catedral de Chartres",
         tecsUnicas: [
-            {
-                nombre: "Hacha de Arista",
-                efecto: "+2 de rango al lanzador de hachas",
-                img: "assets/img/unidades/tec.webp"
-            },
-            {
-                nombre: "Caballeria",
-                efecto: "El asedio se mueve un 50% más rápido.",
-                img: "assets/img/unidades/tec.webp"
-            }
+            { nombre: "Hacha de Arista", efecto: "+2 de rango al lanzador de hachas", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Caballeria", efecto: "los establos trabajan un 40% más rápido.", img: "assets/img/unidades/tec.webp" }
         ]
     },
     { 
         id: 'mongols', 
         nombre: "LOS MONGOLES", 
+        region: "Asia del Este",
         icono: "assets/img/CivIcon-Mongoles.webp",
         imgCastillo: "assets/img/castillos/mongol.webp",
         tipo: "Civilización de arqueros a caballo",
         audio: "assets/audio/mongol.mp3",
         bonos: ["Arqueros a caballo disparan 25% más rápido.", "Cazadores trabajan un 40% más rápido.", "Caballería ligera 20/30 % PR más en la Edad de los Castillos y la Edad Imperial","La línea de caballería de exploración recibe +2 de campo de visión"],
-        unidad: "Mangudai",
-        imgUnidad: "assets/img/unidades/mangu.webp",
+        unidadesUnicas: [{ nombre: "Mangudai", img: "assets/img/unidades/mangu.webp" }],
         imgMaravilla: "assets/img/maravilla/mongol.webp",
         nombreMaravilla: "Gran Tienda de Genghis Khan",
         tecsUnicas: [
-            {
-                nombre: "Nomadas",
-                efecto: "Mantiene la población aunque no haya casas.",
-                img: "assets/img/unidades/tec.webp"
-            },
-            {
-                nombre: "Instrucción militar",
-                efecto: "El asedio se mueve un 50% más rápido.",
-                img: "assets/img/unidades/tec.webp"
-            }
+            { nombre: "Nomadas", efecto: "Mantiene la población aunque no haya casas.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Instrucción militar", efecto: "El asedio se mueve un 50% más rápido.", img: "assets/img/unidades/tec.webp" }
         ]
     },
     { 
         id: 'aztecs', 
-        nombre: "LOS AZTECAS", 
+        nombre: "LOS AZTECAS",
+        region: "America",
         icono: "assets/img/CivIcon-Aztecas.webp",
         imgCastillo: "assets/img/castillos/aztec.webp",
         tipo: "Civilización de infantería",
         audio: "assets/audio/aztec.mp3",
         bonos: [" Comienzas con +50 de oro","Aldeanos cargan +3 de recursos.", "Unidades militares se crean 11% más rápido.","los monjes obtienen +5 PR por cada tecnología de monasterio investigada","Las reliquias generan un 33 % más de oro"],
-        unidad: "Guerrero Jaguar",
-        imgUnidad: "assets/img/unidades/jaguar.webp",
+        unidadesUnicas: [{ nombre: "Guerrero Jaguar", img: "assets/img/unidades/jaguar.webp" }],
         imgMaravilla: "assets/img/maravilla/aztec.webp",
         nombreMaravilla: "Templo Mayor",
         tecsUnicas: [
-            {
-                nombre: "Nomadas",
-                efecto: "Mantiene la población aunque no haya casas.",
-                img: "assets/img/unidades/tec.webp"
-            },
-            {
-                nombre: "Instrucción militar",
-                efecto: "El asedio se mueve un 50% más rápido.",
-                img: "assets/img/unidades/tec.webp"
-            }
+            { nombre: "Atlatl", efecto: "+1 ataque, +1 alcance para guerrilleros.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Guerras florales", efecto: "+4 ataque para infantería.", img: "assets/img/unidades/tec.webp" }
         ]
-    }
+    },
+    {
+        id: 'britons',
+        nombre: "LOS BRITANOS",
+        region: "Europa Occidental",
+        icono: "assets/img/CivIcon-britanos.webp",
+        imgCastillo: "assets/img/castillos/briton.webp",
+        tipo: "Civilización de arqueros de largo alcance",
+        audio: "assets/audio/britons.mp3",
+        bonos: ["Centros Urbanos cuestan 50% menos de madera desde la Edad de los Castillos.", "Arqueros a pie (excepto hostigadores) tienen +1/+2 de alcance en Castillos/Imperial.", "Pastores trabajan un 25% más rápido.", "Las galerías de tiro con arco funcionan un +10 % más rápido"],
+        unidadesUnicas: [{ nombre: "Longbowman", img: "assets/img/unidades/long.webp" }],
+        imgMaravilla: "assets/img/maravilla/briton.webp",
+        nombreMaravilla: "Catedral de Chichester",
+        tecsUnicas: [
+            { nombre: "Yeomen", efecto: "Arqueros a pie +1 de alcance y Torres +2 de ataque.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Lobo de Guerra", efecto: "Lanzapiedras hacen daño en área y son más precisos.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'goths',
+        nombre: "LOS GODOS",
+        region: "Europa Central",
+        icono: "assets/img/CivIcon-goths.webp",
+        imgCastillo: "assets/img/castillos/goth.webp",
+        tipo: "Civilización de infantería masiva",
+        audio: "assets/audio/goth.mp3",
+        bonos: ["Infantería cuesta menos en cada edad.", "Infantería inflige más daño a edificios.", "Telar se investiga instantáneamente.", "+10 de población máxima en la Edad Imperial.", "Los cuarteles funcionan un 20 % más rápido"],
+        unidadesUnicas: [{ nombre: "Huskarle", img: "assets/img/unidades/husca.webp" }],
+        imgMaravilla: "assets/img/maravilla/goth.webp",
+        nombreMaravilla: "Mausoleo de Teodorico",
+        tecsUnicas: [
+            { nombre: "Anarquía", efecto: "Permite crear Huskarles en los Cuarteles.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Movilización", efecto: "Cuarteles trabajan 100% más rápido.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'vikings',
+        nombre: "LOS VIKINGOS",
+        region: "Europa Central",
+        icono: "assets/img/CivIcon-viking.webp",
+        imgCastillo: "assets/img/castillos/viking.webp",
+        tipo: "Civilización de infantería y naval",
+        audio: "assets/audio/viking.mp3",
+        bonos: ["La infantería gana un 20 % PR mas a partir de la Edad Feudal.",
+             "Carreta y Carro de Mano gratis.", 
+             "Los barcos de guerra cuestan un 15 % menos/15/20 % en la Edad Feudal, la Edad de los Castillos y la Edad Imperial",
+             "Los muelles cuestan un 15 % menos."
+            ],
+        unidadesUnicas: [
+            { nombre: "Berserker", img: "assets/img/unidades/berserk.webp" },
+            { nombre: "Barco Dragón", img: "assets/img/unidades/dragon.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/viking.webp",
+        nombreMaravilla: "Iglesia de Borgund",
+        tecsUnicas: [
+            { nombre: "Hersir", efecto: "la infantería gana +5 de ataque contra la caballería y +4 contra las unidades a camello y genera +5 de oro al matar aldeanos, unidades de comercio y monjes", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Bogsveigar", efecto: "los arqueros y los drakkar ganan +1 de ataque", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'japanese',
+        nombre: "LOS JAPONESES",
+        region: "Asia del Este",
+        icono: "assets/img/CivIcon-jap.webp",
+        imgCastillo: "assets/img/castillos/jap.webp",
+        tipo: "Civilización de infantería",
+        audio: "assets/audio/jap.mp3",
+        bonos: ["Infantería ataca 33% más rápido desde la Edad Feudal.", "Edificios económicos cuestan 50% menos.", "Pescadores trabajan más rápido.","Los arqueros a caballo ganan +2 de ataque contra los soldados a distancia","Las galeras tienen +4 de campo de visión."],
+        unidadesUnicas: [{ nombre: "Samurai", img: "assets/img/unidades/samurai.webp" }],
+        imgMaravilla: "assets/img/maravilla/jap.webp",
+        nombreMaravilla: "Todai Ji",
+        tecsUnicas: [
+            { nombre: "Yasama", efecto: "Torres disparan flechas adicionales.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Kataparuto", efecto: "Lanzapiedras se despliegan y disparan más rápido.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'teutons',
+        nombre: "LOS TEUTONES",
+        region: "Europa Central",
+        icono: "assets/img/CivIcon-teu.webp",
+        imgCastillo: "assets/img/castillos/teu.webp",
+        tipo: "Civilización caballeria e infantería pesada",
+        audio: "assets/audio/teu.mp3",
+        bonos: ["Granjas cuestan 40% menos.", "Las unidades de los cuarteles y de los establos ganan +1/+2 de armadura.", "Los centros urbanos tienen +10 de capacidad de guarnición, y las torres, +5."," Los monjes ganan un 100 % de alcance de curación"," Matacanes, Hierba medicinal gratuitas","Las unidades se vuelven más resistentes a la conversión"],
+        unidadesUnicas: [{ nombre: "Teutonic Knight", img: "assets/img/unidades/teu.webp" }],
+        imgMaravilla: "assets/img/maravilla/teu.webp",
+        nombreMaravilla: "Abadía de Maria Laach",
+        tecsUnicas: [
+            { nombre: "Acorazado", efecto: "las armas de asedio ganan +4 de armadura cuerpo a cuerpo.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Almenas", efecto: "los castillos ganan +3 de alcance y la infantería guarecida dispara flechas.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'huns',
+        nombre: "LOS HUNOS",
+        region: "Europa Central",
+        icono: "assets/img/CivIcon-hun.webp",
+        imgCastillo: "assets/img/castillos/hun.webp",
+        tipo: "Civilización de caballería Y Arqueros montados",
+        audio: "assets/audio/huns.mp3",
+        bonos: ["No necesitan casas.", "Los arqueros a caballo cuestan un 10 % menos en la Edad de los Castillos y un 20 % menos en la Edad Imperial", "Lanzapiedras más precisos.","Los establos funcionan un 20 % más rápido"],
+        unidadesUnicas: [{ nombre: "Tarkan", img: "assets/img/unidades/tarkan.webp" }],
+        imgMaravilla: "assets/img/maravilla/hun.webp",
+        nombreMaravilla: "Arco de Constantino",
+        tecsUnicas: [
+            { nombre: "Razzias", efecto: "Tarcanos se crean en Establos.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Ateísmo", efecto: "Reduce el impacto de Reliquias y Maravillas enemigas.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'spanish',
+        nombre: "LOS ESPAÑOLES",
+        region: "Mediterraneo",
+        icono: "assets/img/CivIcon-Espa.webp",
+        imgCastillo: "assets/img/castillos/espa.webp",
+        tipo: "Civilización de pólvora y monjes",
+        audio: "assets/audio/spanish.mp3",
+        bonos: ["Los constructores trabajan un +30 % más rápido.", "Mejoras de herrería no cuestan oro.", " Las unidades de pólvora atacan un +18 % más rápido."," Los galeones artillados disparan con mayor precisión a los objetivos en movimiento"],
+        unidadesUnicas: [{ nombre: "Conquistador", img: "assets/img/unidades/conqui.webp" },
+            { nombre: "Misionero", img: "assets/img/unidades/monb.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/espa.webp",
+        nombreMaravilla: "Torre del Oro",
+        tecsUnicas: [
+            { nombre: "Inquisición", efecto: "los monjes y los misioneros convierten más rápido; los misioneros ganan +1 de alcance", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Supremacía", efecto: "Aldeanos se vuelven unidades militares fuertes.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+     {
+        id: 'celts',
+        nombre: "LOS CELTAS",
+        region: "Europa Occidental",
+        icono: "assets/img/CivIcon-celt.webp",
+        imgCastillo: "assets/img/castillos/celt.webp",
+        tipo: "Civilización de infantería y asedio",
+        audio: "assets/audio/celt.mp3",
+        bonos: [
+            "La infantería se mueve un 5/10/15/20 % más rápido en la Edad Oscura, la Edad Feudal, la Edad de los Castillos y la Edad Imperial.",
+            "Armas de asedio disparan 25% más rápido.",
+            "Aldeanos recolectan madera 15% más rápido.",
+            "Los talleres de maquinaria de asedio funcionan un 20 % más rápido"
+        ],
+        unidadesUnicas: [
+            { nombre: "Incursor Azul", img: "assets/img/unidades/woad.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/celt.webp",
+        nombreMaravilla: "Newgrange",
+        tecsUnicas: [
+            { nombre: "Bastión", efecto: "los castillos y la línea de atalayas atacan un 33 % más rápido; los castillos curan a la infantería aliada en un radio de 7 casillas", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Furor Celta", efecto: "Asedio tiene +40% de vida.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+     {
+        id: 'magyars',
+        nombre: "LOS MAGIARES",
+        region: "Europa del Este",
+        icono: "assets/img/CivIcon-magy.webp",
+        imgCastillo: "assets/img/castillos/magy.webp",
+        tipo: "Civilización de caballería y Arqueros montados",
+        audio: "assets/audio/magy.mp3",
+        bonos: [
+            "Los aldeanos eliminan a los lobos de un golpe.",
+            "La línea de caballería de exploración cuesta un 15 % menos",
+            "Mejoras de ataque cuerpo a cuerpo gratis",
+        ],
+        unidadesUnicas: [
+            { nombre: "Húsar Magyar", img: "assets/img/unidades/magy.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/magy.webp",
+        nombreMaravilla: "Basílica de Esztergom",
+        tecsUnicas: [
+            { nombre: "Ejercito Corvinio", efecto: "Húsares Magyar no cuestan oro.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Arcos Recurvos", efecto: "Arqueros a caballo +1 de alcance y ataque.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'bohemians',
+        nombre: "LOS BOHEMIOS",
+        region: "Europa del Este",
+        icono: "assets/img/CivIcon-bohe.webp",
+        imgCastillo: "assets/img/castillos/bohe.webp",
+        tipo: "Civilización de pólvora y monjes",
+        audio: "assets/audio/bohe.mp3",
+        bonos: [
+            "Mineros trabajan más rápido.",
+            "Tecnologías de pólvora están disponibles antes.",
+            "Monjes son más baratos."
+        ],
+        unidadesUnicas: [
+            { nombre: "Carreta de Guerra Hussita", img: "assets/img/unidades/wago.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/bohe.webp",
+        nombreMaravilla: "Torre de la Pólvora de Praga",
+        tecsUnicas: [
+            { nombre: "Tácticas de fuerte de carretas", efecto: "las unidades de pólvora se mueven un 15 % más rápido.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Reformas husitas", efecto: "el coste de oro de los monjes y de las tecnologías del monasterio se reemplaza por comida.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+     {
+        id: 'poles',
+        nombre: "LOS POLACOS",
+        region: "Europa del Este",
+        icono: "assets/img/CivIcon-poles.webp",
+        imgCastillo: "assets/img/castillos/poles.webp",
+        tipo: "Civilización de caballería",
+        audio: "assets/audio/poles.mp3",
+        bonos: [
+            " El folwark sustituye al molino.",
+            " Los aldeanos regeneran 10/15/20 PR en las edades Feudal/de los Castillos/Imperial",
+            "Los canteros generan oro además de piedra.",
+            "Las mejoras Pureza de sangre y la línea de caballería de exploración cuestan un 50 % menos de comida",
+            "La línea de caballería de exploración recibe +1 de ataque contra los soldados a distancia."
+        ],
+        unidadesUnicas: [
+            { nombre: "Obuch", img: "assets/img/unidades/obuch.webp" },
+            { nombre: "Hùsar Alado", img: "assets/img/unidades/sc4.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/poles.webp",
+        nombreMaravilla: "Castillo de Wawel",
+        tecsUnicas: [
+            { nombre: "Privilegios de szlachta ", efecto: "la línea de caballeros cuesta un 60 % menos de oro.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Legado lequítico", efecto: "la línea de caballería de exploración arrasa a su paso.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+     {
+        id: 'lithuanians',
+        nombre: "LOS LITUANOS",
+        region: "Europa del Este",
+        icono: "assets/img/CivIcon-Lit.webp",
+        imgCastillo: "assets/img/castillos/lit.webp",
+        tipo: "Civilización de caballería y monjes",
+        audio: "assets/audio/lit.mp3",
+        bonos: [
+            "Cada centro urbano proporciona +100 de comida",
+            "Los lanceros y guerrilleros se mueven un 10 % más rápido.",
+            "Caballería gana ataque por cada reliquia.",
+            "Monasterios trabajan más rápido."
+        ],
+        unidadesUnicas: [
+            { nombre: "Leitis", img: "assets/img/unidades/leiti.webp" },
+            { nombre: "Hùsar Alado", img: "assets/img/unidades/sc4.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/lit.webp",
+        nombreMaravilla: "Castillo de Trakai",
+        tecsUnicas: [
+            { nombre: "Fuertes en las colinas", efecto: "centros urbanos: +3 de alcance.", img: "assets/img/unidades/tec.webp" },
+            { nombre: " Escudo rectangular ", efecto: "lanceros y guerrilleros: +2 de armadura.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'slavs',
+        nombre: "LOS ESLAVOS",
+        region: "Europa del Este",
+        icono: "assets/img/CivIcon-slavs.webp",
+        imgCastillo: "assets/img/castillos/slavs.webp",
+        tipo: "Civilización de infantería y caballería",
+        audio: "assets/audio/slavs.mp3",
+        bonos: [
+            "Aldeanos granjeros trabajan 15% más rápido.",
+            " Incendiarismo y gambesones gratis",
+            " Las unidades del taller de maquinaria de asedio son un 15 % más baratas",
+            " Los monjes se mueven un 20 % más rápido",
+            "Cada edificio militar proporciona +5 de espacio de población."
+        ],
+        unidadesUnicas: [
+            { nombre: "Boyardo", img: "assets/img/unidades/boyar.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/slavs.webp",
+        nombreMaravilla: "Iglesia de San Jorge",
+        tecsUnicas: [
+            { nombre: "Detinets", efecto: "sustituye por madera el 40 % del coste de piedra de castillos y atalayas.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Druzhina", efecto: "la infantería inflige daño de arrollamiento", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'bulgarians',
+        nombre: "LOS BÚLGAROS",
+        region: "Europa del Este",
+        icono: "assets/img/CivIcon-bulg.webp",
+        imgCastillo: "assets/img/castillos/bulg.webp",
+        tipo: "Civilización de caballería e infanteria",
+        audio: "assets/audio/bulg.mp3",
+        bonos: [
+            "Mejoras gratis para la línea de milicia.",
+            " Tecnologías del herrero y del taller de maquinaria de asedio cuestan un 50 % menos de comida.",
+            "Los centros urbanos cuestan un 50 % menos de piedra.",
+            " Se puede construir el krepost en la Edad de los Castillos."
+        ],
+        unidadesUnicas: [
+            { nombre: "Konnik", img: "assets/img/unidades/konni.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/bulg.webp",
+        nombreMaravilla: "Iglesia Redonda",
+        tecsUnicas: [
+            { nombre: " Estribos", efecto: "la caballería ataca un 33 % más rápido.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Bagains", efecto: "la línea de milicia gana +5 de armadura", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'cumans',
+        nombre: "LOS CUMANOS",
+        region: "Asia Central",
+        icono: "assets/img/CivIcon-cumans.webp",
+        imgCastillo: "assets/img/castillos/cuman.webp",
+        tipo: "Civilización de caballería y Arqueros montados",
+        audio: "assets/audio/cuman.mp3",
+        bonos: [
+            "Se puede construir un centro urbano adicional en la Edad Feudal.",
+            " Las unidades montadas se mueven un +5/10/15 % más rápido en la Edad Feudal/.",
+            "Las galerías de tiro y los establos cuestan 75 menos de madera.",
+            "Talleres de maquinaria de asedio y ariete disponibles en la Edad Feudal; arietes cubiertos disponibles en la Edad de los Castillos."
+        ],
+        unidadesUnicas: [
+            { nombre: "Kipchak", img: "assets/img/unidades/kip.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/cuman.webp",
+        nombreMaravilla: "Fortaleza de Sarkel",
+        tecsUnicas: [
+            { nombre: "Ganadería de la estepa", efecto: "caballería ligera y arqueros a caballo: creación un 100 % más rápida.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Mercenarios cumanos", efecto: "todos los integrantes del equipo pueden generar 10 guerreros kipchak de élite gratis por castillo.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+
+    {
+        id: 'georgians',
+        nombre: "LOS GEORGIANOS",
+        region: "Mediterraneo",
+        icono: "assets/img/CivIcon-geor.webp",
+        imgCastillo: "assets/img/castillos/geor.webp",
+        tipo: "Civilización defensiva y caballería",
+        audio: "assets/audio/geor.mp3",
+        bonos: [
+            "Comienza con un carro de mulas.",
+            "Las unidades y los edificios reciben un 15 % menos de daño al luchar desde una elevación superior.",
+            " La caballería regenera 2/8/14 PR por minuto en la Edad Feudal/Edad de los Castillos/Edad Imperial.",
+            "Las iglesias fortificadas proporcionan un 10 % más de velocidad de trabajo a los aldeanos en un radio de 9 casillas"
+        ],
+        unidadesUnicas: [
+            { nombre: "Monaspa", img: "assets/img/unidades/monas.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/geor.webp",
+        nombreMaravilla: "Fortaleza de Narikala",
+        tecsUnicas: [
+            { nombre: "Torres esvanas", efecto: "las fortificaciones ganan +2 de ataque; la línea de atalayas inflige daño cuando se atraviesan.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Caballería aznauri", efecto: "las unidades de caballería ocupan un 20 % menos de espacio de población.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'armenian',
+        nombre: "LOS ARMENIOS",
+        region: "Mediterraneo",
+        icono: "assets/img/CivIcon-arme.webp",
+        imgCastillo: "assets/img/castillos/arme.webp",
+        tipo: "Civilización de infanteria y naval",
+        audio: "assets/audio/arme.mp3",
+        bonos: [
+            " Los carros de mulas cuestan un 25 % menos.",
+            " Las tecnologías del carro de mulas son un 40 % más efectivas.",
+            "Las mejoras de la línea de lanceros y milicia están disponibles una edad antes (excepto hombres de armas).",
+            " La primera iglesia fortificada recibe una reliquia gratuita",
+            "Las galeras y los dromones disparan un proyectil adicional"
+        ],
+        unidadesUnicas: [
+            { nombre: "Arquero Compuesto", img: "assets/img/unidades/compo.webp" },
+            { nombre: "Monje Guerrero", img: "assets/img/unidades/warrior.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/arme.webp",
+        nombreMaravilla: "Iglesia de San Gregorio el Iluminador",
+        tecsUnicas: [
+            { nombre: " Flota de Cilicia", efecto: "aumenta el radio de explosión de los barcos de demolición un 20 %; las galeras y dromones tienen +1 de alcance.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Relicarios ", efecto: "la infantería, a excepción de los lanceros, obtiene +30 PR; los sacerdotes guerreros curan un 100 % más rápido.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'chinese',
+        nombre: "LOS CHINOS",
+        region: "Asia del Este",
+        icono: "assets/img/CivIcon-Chinos.webp",
+        imgCastillo: "assets/img/castillos/china.webp",
+        tipo: "Civilización de Arqueros",
+        audio: "assets/audio/china.mp3",
+        bonos: [
+            "Comienza con +3 aldeanos, -50 de madera, -200 de comida.",
+            "Las tecnologías cuestan un 5/10/15 % menos en la Edad Feudal, la Edad de los Castillos y la Edad Imperial.",
+            "Los centros urbanos ganan +7 de campo de visión y habilitan +15 de espacio de población.",
+            "Los lanceros de fuego y los brulotes se mueven un +5/10 % más rápido en la Edad de los Castillos y la Edad Imperial"
+        ],
+        unidadesUnicas: [
+            { nombre: "Chu Ko Nu", img: "assets/img/unidades/chuko.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/china.webp",
+        nombreMaravilla: "Templo del Cielo",
+        tecsUnicas: [
+            { nombre: " La Gran Muralla", efecto: "las murallas, las líneas de atalayas y las torres de bombarda ganan un +30 % más de PR.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Cohetería ", efecto: "los escorpiones, los carros de cohetes y los Lou Chuan ganan un +25 % de ataque; los Lou Chuan disparan cohetes", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'koreans',
+        nombre: "LOS COREANOS",
+        region: "Asia del Este",
+        icono: "assets/img/CivIcon-kor.webp",
+        imgCastillo: "assets/img/castillos/kor.webp",
+        tipo: "Civilización naval y defensiva",
+        audio: "assets/audio/kor.mp3",
+        bonos: [
+            " Los canteros trabajan un +20 % más rápido.",
+            "Los soldados a distancia y la infantería cuestan un 50 % menos de madera.",
+            " Mejoras de armadura para arquero y torres gratis (la torre de bombarda requiere Química).",
+            " Los barcos de guerra cuestan un 20 % menos de madera."
+        ],
+        unidadesUnicas: [
+            { nombre: "Carro de Guerra", img: "assets/img/unidades/war.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/coreanos.webp",
+        nombreMaravilla: "Templo de Haeinsa",
+        tecsUnicas: [
+            { nombre: "Eupseong", efecto: "línea de atalayas: +2 de alcance.", img: "assets/img/unidades/tec.webp" },
+            { nombre: " Shinkichon", efecto: "Carros cohete: +1 de alcance.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'indians',
+        nombre: "LOS HINDOSTANOS",
+        region: "India y el Sudeste Asiático",
+        icono: "assets/img/CivIcon-ind.webp",
+        imgCastillo: "assets/img/castillos/ind.webp",
+        tipo: "Civilización de camellos y pólvora",
+        audio: "assets/audio/ind.mp3",
+        bonos: [
+            "Los aldeanos cuestan un 8 %/13 %, 18 % y 23 % menos en la Alta Edad Media, Edad Feudal, Edad de los Castillos y Edad Imperial.",
+            " Los jinetes de camello atacan un +20 % más rápidos.",
+            "Unidades de pólvora: +1 de armadura/+1 de armadura antiperforación.",
+            "Pueden construir caravasar en la Edad Imperial.",
+            "Unidades a camello y de caballería ligera: +2 de ataque contra edificios."
+        ],
+        unidadesUnicas: [
+            { nombre: "Gulam", img: "assets/img/unidades/gulam.webp" },
+            { nombre: "Camello imperial", img: "assets/img/unidades/camel3.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/ind.webp",
+        nombreMaravilla: "Tumba de Humayun",
+        tecsUnicas: [
+            { nombre: "Camino del Gran Tronco", efecto: "todos los ingresos de oro son un +10 % más rápidos; la tarifa de mercado se reduce al 10 %.", img: "assets/img/unidades/tec.webp" },
+            { nombre: " Shatagni ", efecto: "artilleros manuales: +2 de alcance.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'persians',
+        nombre: "LOS PERSAS",
+        region: "Oriente Medio",
+        icono: "assets/img/CivIcon-persa.webp",
+        imgCastillo: "assets/img/castillos/persa.webp",
+        tipo: "Civilización de caballería",
+        audio: "assets/audio/persa.mp3",
+        bonos: [
+            " Empieza con +50 de madera y comida.",
+            "Los centros urbanos y los muelles ganan un 100 % más de PR y trabajan un 5/10/15/20 % más rápido en la Edad Oscura, la Edad Feudal, la Edad de los Castillos, y la Edad Imperial.",
+            "Tácticas de los partias disponibles en la Edad de los Castillos.",
+            "Puedes construir caravasares en la Edad Imperial.",
+            "Los caballeros ganan +2 de ataque contra los soldados a distancia"
+        ],
+        unidadesUnicas: [
+            { nombre: "Elefante de Guerra", img: "assets/img/unidades/warele.webp" },
+            { nombre: "Savar", img: "assets/img/unidades/savar.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/persa.webp",
+        nombreMaravilla: "Palacio de Persépolis",
+        tecsUnicas: [
+            { nombre: "Kamandaran", efecto: "el coste de oro de los arqueros se reemplaza por un coste adicional de madera.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Ciudadelas", efecto: "los castillos infligen +4 de ataque, +3 contra arietes, +3 contra infantería y reciben un 25 % menos de daño adicional.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'mayans',
+        nombre: "LOS MAYAS",
+        region: "America",
+        icono: "assets/img/CivIcon-maya.webp",
+        imgCastillo: "assets/img/castillos/maya.webp",
+        tipo: "Civilización de arqueros a pie",
+        audio: "assets/audio/maya.mp3",
+        bonos: [
+            "Comienzan con 1 aldeano más, pero con 50 menos de comida.",
+            " Los recursos duran un 15 % más.",
+            "Los arqueros a pie cuestan un 10 % menos en la Edad Feudal, 20 % menos en la Edad de los Castillos y 30 % menos en la Edad Imperial."
+        ],
+        unidadesUnicas: [
+            { nombre: "Arquero de Plumas", img: "assets/img/unidades/plume.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/maya.webp",
+        nombreMaravilla: "Templo del gran jaguar",
+        tecsUnicas: [
+            { nombre: "Lanzadores de hul 'che", efecto: "los guerrilleros disparan un proyectil adicional.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "El Dorado", efecto: "40 PR más para guerreros águila.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+
+    {
+        id: 'inca',
+        nombre: "LOS INCAS",
+        region: "America",
+        icono: "assets/img/CivIcon-inca.webp",
+        imgCastillo: "assets/img/castillos/inca.webp",
+        tipo: "Civilización de infantería",
+        audio: "assets/audio/inca.mp3",
+        bonos: [
+            " Las casas proporcionan +5 de espacio de población.",
+            "El coste de piedra de los edificios se reduce un 15 %.",
+            " El coste de comida de las unidades militares se reduce un 10 %/15 %/20 % y 25 % en la Edad Oscura/Edad Feudal/Edad de los Castillos y Edad Imperial.",
+            " Los aldeanos recibirán mejoras de infantería de la herrería a partir de la Edad de los Castillos"
+        ],
+        unidadesUnicas: [
+            { nombre: "Kamayuk", img: "assets/img/unidades/kama.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/inca.webp",
+        nombreMaravilla: "Templo del sol",
+        tecsUnicas: [
+            { nombre: "Huaracas", efecto: "(los guerrilleros y los soldados con honda no tienen alcance mínimo; los soldados con honda ganan +1 de ataque.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Escudos de tela", efecto: "los kamayuks, los soldados con honda y los guerreros águila ganan +1 de armadura y +2 de armadura perforante.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'bengalis',
+        nombre: "LOS BENGALIS",
+        region: "india y el Sudeste Asiático",
+        icono: "assets/img/CivIcon-beng.webp",
+        imgCastillo: "assets/img/castillos/beng.webp",
+        tipo: "Civilización de Elefantes y monjes",
+        audio: "assets/audio/beng.mp3",
+        bonos: [
+            "Los centros urbanos generan 2 aldeanos cuando se avanza a la siguiente edad.",
+            "La caballería cuenta con +2 de ataque contra los guerrilleros.",
+            "Las unidades en elefante reciben un 25 % menos de daño adicional y son más resistentes a la conversión.",
+            "Los monjes obtienen +3 de armadura cuerpo a cuerpo/+3 de armadura antiperforación.",
+            "Los barcos regeneran 15 PR por minuto"
+        ],
+        unidadesUnicas: [
+            { nombre: "Ratha", img: "assets/img/unidades/ratha.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/beng.webp",
+        nombreMaravilla: "Somapura Mahavihara",
+        tecsUnicas: [
+            { nombre: "Paiks", efecto: "los rathas y las unidades en elefante atacan un 20 % más rápido.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Mahāyāna ", efecto: "los aldeanos y los monjes ocupan un 10 % menos de espacio de población.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+
+
 ];
+
+
 
 const unidadesData = [
     { 
@@ -107,7 +634,7 @@ const unidadesData = [
     },
     {
         id: 'guerrero_aguila', 
-        tipo: 'Infanteria', // Corregido: tipo e Infanteria con mayúscula
+        tipo: 'Infanteria',
         nombre: 'Guerrero Águila',
         imagen: 'assets/img/unidades/agui.webp', 
         hp: 50, atk: 7, arm: '0/2',
@@ -160,7 +687,7 @@ const unidadesData = [
     { 
         id: 'milicia_flamenca', 
         nombre: 'Milicia Flamenca', 
-        imagen: 'assets/img/unidades/flemi.webp', // Asegúrate de subir esta imagen
+        imagen: 'assets/img/unidades/flemi.webp',
         tipo: 'Infanteria', 
         hp: 60, atk: 11, arm: '1/1', 
         desc: 'Unidad de infantería robusta con bonus contra caballería. Unica para los Borgoñeses.',
@@ -875,16 +1402,43 @@ function cargarSeccion(seccion) {
 </section>
 
                 <section class="escena-competitiva fade-in">
-                    <div class="contenedor-negro-central">
-                        <h2 class="titulo-dorado">ESCENA COMPETITIVA</h2>
-                        <div class="linea-roja-decorativa"></div>
-                        <div class="competitivo-grid">
-                            <div class="info-item"><h3>E-SPORTS DE ÉLITE</h3><p>Torneos globales con premios masivos.</p></div>
-                            <div class="info-item border-x"><h3>COMUNIDAD ACTIVA</h3><p>Legión de jugadores apasionados.</p></div>
-                            <div class="info-item"><h3>ACTUALIZACIONES</h3><p>Equilibrio constante y nuevo contenido.</p></div>
-                        </div>
+    <div class="contenedor-negro-central">
+        <h2 class="titulo-dorado">ESCENA COMPETITIVA</h2>
+        <div class="linea-roja-decorativa"></div>
+
+        <div class="bento-wrapper">
+            <div class="columna-texto">
+                <div class="info-item-premium red-edge">
+                    <h3>E-SPORTS DE ÉLITE</h3>
+                    <p>Torneos globales con premios masivos que definen quién es el mejor estratega del mundo.</p>
+                </div>
+                <div class="info-item-premium gold-edge">
+                    <h3>COMUNIDAD ACTIVA</h3>
+                    <p>Una legión de jugadores apasionados que mantienen vivo el legado compartiendo tácticas.</p>
+                </div>
+                <div class="info-item-premium red-edge">
+                    <h3>ACTUALIZACIONES</h3>
+                    <p>Equilibrio constante y nuevo contenido que garantiza que el meta-juego evolucione.</p>
+                </div>
+            </div>
+
+            <div class="columna-galeria-bento">
+                <div class="comp-foto-grande">
+                    <img src="assets/img/tatoh.jpg" alt="Torneo Principal">
+                    <div class="badge-torneo">WORLD CHAMPIONSHIP SERIES</div>
+                </div>
+                <div class="fila-inferior-galeria">
+                    <div class="foto-mediana">
+                        <img src="assets/img/hera.jpg" alt="Jugador">
                     </div>
-                </section>
+                    <div class="stack-vertical-mini">
+                        <div class="foto-mini"><img src="assets/img/red.jpg" alt="Evento"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
             </section>
         `;
 
@@ -900,6 +1454,7 @@ function cargarSeccion(seccion) {
 
     } else if (seccion === 'civilizaciones') {
     detenerAutoplay();
+    civilizacionesAoE.sort((a, b) => a.nombre.localeCompare(b.nombre));
     
     // Generar las cartas desde el array
     const cardsHTML = civilizacionesAoE.map(civ => `
@@ -915,9 +1470,24 @@ function cargarSeccion(seccion) {
                 <h2 class="titulo-dorado-enc">ENCICLOPEDIA DE CIVILIZACIONES</h2>
                 <p class="subtitulo-rojo-enc">SELECCIONA TU LINAJE PARA LA VICTORIA</p>
             </div>
-            
+
+            <div class="filtros-container">
+            <button class="btn-filtro active" onclick="filtrarPorRegion('Todas', this)">Todas</button>
+            <button class="btn-filtro" onclick="filtrarPorRegion('Europa Occidental', this)">Europa Occ.</button>
+            <button class="btn-filtro" onclick="filtrarPorRegion('Europa Central', this)">Europa Central</button>
+            <button class="btn-filtro" onclick="filtrarPorRegion('Europa del Este', this)">Europa del Este</button>
+            <button class="btn-filtro" onclick="filtrarPorRegion('Mediterraneo', this)">Mediterráneo</button>
+            <button class="btn-filtro" onclick="filtrarPorRegion('India y el Sudeste Asiático', this)">India y Sudeste Asiático</button>
+            <button class="btn-filtro" onclick="filtrarPorRegion('Oriente Medio', this)">Oriente Medio</button>
+            <button class="btn-filtro" onclick="filtrarPorRegion('Asia del Este', this)">Asia del Este</button>
+            <button class="btn-filtro" onclick="filtrarPorRegion('Asia Central', this)">Asia Central</button>
+            <button class="btn-filtro" onclick="filtrarPorRegion('America', this)">América</button>
+            </div>
+
+            <div class="contenedor-enciclopedia-premium">
             <div class="civ-grid">
                 ${cardsHTML}
+            </div>
             </div>
 
             <div id="side-panel-civ" class="side-panel">
@@ -926,8 +1496,11 @@ function cargarSeccion(seccion) {
             </div>
             
             <div id="overlay-negro" class="overlay-hidden" onclick="cerrarPanelCiv()"></div>
+            
         </section>
+        
     `;
+    renderizarCivis(civilizacionesAoE);
 } else if (seccion === 'unidades') {
         detenerAutoplay();
         contenedor.innerHTML = `
@@ -1152,12 +1725,8 @@ function mostrarDetalleCiv(idCiv) {
             <h2 class="panel-titulo">${s.nombre}</h2>
             <p class="panel-subtitulo">${s.tipo}</p>
 
-            <div class="audio-player-container">
-                <div class="audio-label">TEMA MUSICAL</div>
-                <audio controls controlsList="nodownload" class="mini-audio">
-                    <source src="${s.audio || ''}" type="audio/mpeg">
-                    Tu navegador no soporta el audio.
-                </audio>
+            <div id="audio-dynamic-container" class="audio-player-container">
+                <div class="audio-label">Cargando tema musical...</div>
             </div>
 
             <div class="panel-seccion castillo-visual-container">
@@ -1175,17 +1744,21 @@ function mostrarDetalleCiv(idCiv) {
             </div>
 
             <div class="panel-seccion">
-                <h4>UNIDAD ÚNICA</h4>
-                <div class="unidad-box-premium">
-                    <div class="unidad-img-wrapper">
-                        <img src="${s.imgUnidad}" alt="${s.unidad}" class="unidad-thumbnail">
-                    </div>
-                    <div class="unidad-info">
-                        <span class="unidad-nombre">${s.unidad}</span>
-                        <p class="unidad-descripcion">Unidad de élite de los ${s.nombre.replace('LOS ', '')}.</p>
-                    </div>
+    <h4>UNIDADES ÚNICAS</h4>
+    <div class="unidades-container">
+        ${(s.unidadesUnicas || []).map(u => `
+            <div class="unidad-box-premium">
+                <div class="unidad-img-wrapper">
+                    <img src="${u.img}" alt="${u.nombre}" class="unidad-thumbnail">
+                </div>
+                <div class="unidad-info">
+                    <span class="unidad-nombre">${u.nombre}</span>
+                    <p class="unidad-descripcion">.</p>
                 </div>
             </div>
+        `).join('')}
+    </div>
+</div>
 
            <div class="panel-seccion">
                 <h4>TECNOLOGÍAS ÚNICAS</h4>
@@ -1221,6 +1794,22 @@ function mostrarDetalleCiv(idCiv) {
         panel.classList.add('active');
         overlay.classList.add('overlay-visible');
         overlay.classList.remove('overlay-hidden');
+        setTimeout(() => {
+            const container = document.getElementById('audio-dynamic-container');
+            if (container && s.audio) {
+                container.innerHTML = `
+                    <div class="audio-label">TEMA MUSICAL</div>
+                    <audio controls controlsList="nodownload" class="mini-audio">
+                        <source src="${s.audio}" type="audio/mpeg">
+                        Tu navegador no soporta el audio.
+                    </audio>
+                `;
+                
+                // Forzamos al audio a recargar para que reconozca la nueva fuente
+                const audioTag = container.querySelector('audio');
+                audioTag.load();
+            }
+        }, 300); // 300ms es el tiempo estándar de las transiciones CSS
     }, 10);
 }
 
@@ -1274,4 +1863,48 @@ function resetParallax(card) {
     const render = card.querySelector('.unidad-render');
     if (render) render.style.transform = `translateX(0) translateY(0) scale(1)`;
 }
+
+function renderizarCivis(lista) {
+    const grid = document.getElementById('civ-grid');
+    if (!grid) return; // Seguridad por si el elemento no existe
+
+    let cardsHTML = "";
+    lista.forEach(civ => {
+        cardsHTML += `
+            <div class="civ-card" onclick="mostrarDetalleCiv('${civ.id}')">
+                <img src="${civ.icono}" alt="${civ.nombre}" class="civ-icon">
+                <div class="civ-info">
+                    <h3>${civ.nombre}</h3>
+                    <p>${civ.region}</p>
+                </div>
+            </div>
+        `;
+    });
+    grid.innerHTML = cardsHTML;
+}
+
+function filtrarPorRegion(region, boton) {
+    // 1. Manejo visual: Quitar 'active' de todos y ponerlo al que pulsaste
+    document.querySelectorAll('.btn-filtro').forEach(b => b.classList.remove('active'));
+    boton.classList.add('active');
+
+    // 2. Filtrar los datos
+    const filtradas = region === 'Todas' 
+        ? civilizacionesAoE 
+        : civilizacionesAoE.filter(civ => civ.region === region);
+
+    // 3. Seleccionar el contenedor (usando la clase que ya tienes)
+    const grid = document.querySelector('.civ-grid');
+
+    // 4. Volver a generar el HTML (Es el mismo código que ya tienes en tu else if)
+    grid.innerHTML = filtradas.map(civ => `
+        <div class="civ-card" onclick="mostrarDetalleCiv('${civ.id}')">
+            <img src="${civ.icono}" alt="${civ.nombre}">
+            <span>${civ.nombre.replace('LOS ', '')}</span>
+        </div>
+    `).join('');
+}
+
+
+
 

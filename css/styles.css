@@ -370,43 +370,94 @@ main {
 
 /* 6. CIVILIZACIONES Y ANIMACIONES */
 /* Rejilla de Civilizaciones */
-.civ-grid {
-    display: grid;
-    /* Reducimos el tamaño mínimo de la columna a 120px */
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
-    gap: 15px; /* Espacio más cerrado entre escudos */
-    padding: 20px;
-    max-width: 800px; /* Evita que la rejilla ocupe toda la pantalla horizontalmente */
-    margin: 0; /* Alineado a la izquierda según tu imagen de referencia */
+
+.contenedor-enciclopedia-premium {
+    /* Gradiente radial profundo para resaltar los escudos del centro */
+    background: radial-gradient(circle at center, rgba(35, 35, 35, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
+    
+    /* Borde dorado sutil tipo marco de cuadro antiguo */
+    border: 2px solid;
+    border-image: linear-gradient(to bottom, #c5a05944, #5d4a2644) 1;
+    
+    /* Sombras para dar volumen */
+    box-shadow: 
+        0 0 40px rgba(0, 0, 0, 0.9),                /* Sombra externa profunda */
+        0 0 20px rgba(197, 160, 89, 0.05),          /* Resplandor dorado muy tenue */
+        inset 0 0 30px rgba(197, 160, 89, 0.02);    /* Luz interna ambiental */
+    
+    margin: 40px auto;
+    padding: 40px;
+    max-width: 1300px; /* Un poco más ancho que la escena competitiva */
+    border-radius: 4px;
+    position: relative;
+    
 }
 
+.contenedor-enciclopedia-premium::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    /* Gradiente que desaparece hacia los lados */
+    background: linear-gradient(90deg, transparent, #c5a059, transparent);
+    opacity: 0.5;
+}
+.civ-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin: 0; 
+}
 .civ-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(197, 160, 89, 0.2);
+    background: rgba(255, 255, 255, 0.03); /* Efecto cristalino */
+    border: 1px solid rgba(197, 160, 89, 0.1);
     padding: 15px 5px; /* Menos padding vertical */
     text-align: center;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     aspect-ratio: 0.9 / 1; /* Ligeramente más alta que ancha para el texto */
     border-radius: 4px;
+    z-index: 1;
+    overflow: hidden; /* Importante para el brillo */
+}
+
+.civ-card::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(30deg);
+    transition: none;
 }
 
 .civ-card:hover, .civ-card.active {
-    border-color: #c5a059;
+    border-color: #ffd700;
     background: rgba(197, 160, 89, 0.1);
-    box-shadow: inset 0 0 15px rgba(197, 160, 89, 0.2);
+    box-shadow: inset 0 0 15px rgba(197, 160, 89, 0.2), 0 0 30px rgba(0, 0, 0, 0.5);
     transform: scale(1.05);
+}
+
+.civ-card:hover::after {
+    left: 120%;
+    transition: all 0.6s ease-in-out;
 }
 
 .civ-card img {
     width: 65px; /* Tamaño del escudo */
     height: auto;
     margin-bottom: 12px;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.8));
 }
 
 .civ-card span {
@@ -666,6 +717,39 @@ main {
     letter-spacing: 1px;
     text-transform: uppercase;
     opacity: 0.8;
+}
+
+.filtros-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.btn-filtro {
+    background: rgba(0, 0, 0, 0.6);
+    color: #c5a059;
+    border: 1px solid #c5a059;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: 'Cinzel', serif; /* O la fuente que uses */
+    transition: 0.3s all;
+    font-size: 0.85rem;
+}
+
+.btn-filtro:hover {
+    background: #c5a059;
+    color: #000;
+}
+
+.btn-filtro.active {
+    background: linear-gradient(to bottom, #c5a059, #8c6d31);
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.5);
+    border-bottom: 2px solid #ffd700;
 }
 
 /* Este es el contenedor que inyectamos en el JS */
@@ -984,12 +1068,38 @@ main {
 }
 
 .stats-seccion-completa {
-    background: rgba(10, 10, 10, 0.9);
-    border: 1px solid rgba(197, 160, 89, 0.2);
+    /* GRADIENTE: De un negro casi total a un gris grafito muy sutil en el centro */
+    background: radial-gradient(circle, rgba(30, 30, 30, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
+    
+    /* BORDE: Ahora es un gradiente dorado (arriba brillante, abajo oscuro) */
+    border: 1px solid;
+    border-image: linear-gradient(to bottom, #c5a059, #5d4a26) 1;
+    
+    /* SOMBRA: Para que la sección parezca "flotar" sobre el fondo */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(197, 160, 89, 0.05);
+
     margin: 60px auto;
     max-width: 900px;
     padding: 50px 20px;
-    border-radius: 4px;
+    
+    /* Nota: border-image anula el border-radius en algunos navegadores. 
+       Si quieres esquinas redondeadas, usa la propiedad 'clip-path' o mantén el color sólido. */
+    border-radius: 4px; 
+    
+    /* EFECTO EXTRA: Un brillo sutil superior */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Agrega esto para crear una línea de luz sutil arriba */
+.stats-seccion-completa::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.5), transparent);
 }
 
 .stat-number {
@@ -1079,8 +1189,8 @@ main {
 }
 
 .seccion-unidades-premium {
-    background-color: #0a0a0a;
-    background-image: url('assets/img/textura-oscura.png'); /* Opcional: textura de piedra */
+    background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
+    border: 2px solid #c5a059; /* Línea divisoria dorada */
     padding: 100px 20px;
     text-align: center;
 }
@@ -1218,12 +1328,105 @@ main {
 }
 
 .contenedor-negro-central {
-    background: #0a0a0a;
-    border: 1px solid #1a1a1a;
-    max-width: 900px;
-    margin: 0 auto;
+    background: radial-gradient(
+        circle at center, 
+        rgba(45, 45, 45, 0.98) 0%, 
+        rgba(15, 15, 15, 1) 100%
+    );
+    /* BORDE CON LUZ: Un degradado dorado pero muy tenue para definir los límites */
+    border: 1px solid;
+    border-image: linear-gradient(to bottom, #c5a05933, #5d4a2633) 1;
+
+    /* SOMBRA EXTERNA E INTERNA: 
+       - La externa (negra) lo separa del fondo de la web.
+       - La interna (dorada muy suave) le da volumen al interior. */
+    box-shadow: 
+        0 40px 100px rgba(0, 0, 0, 0.9), 
+        inset 0 0 40px rgba(197, 160, 89, 0.03);
     padding: 60px 40px;
-    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bento-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr; /* La galería es más ancha que el texto */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Tarjetas de texto con bordes gradientes laterales */
+.info-item-premium {
+    background: linear-gradient(145deg, rgba(30,30,30,0.4), rgba(10,10,10,0.6));
+    padding: 25px;
+    margin-bottom: 15px;
+    border-left: 3px solid;
+    transition: transform 0.3s ease;
+}
+
+.red-edge { border-image: linear-gradient(to bottom, #ff0000, #550000) 1; }
+.gold-edge { border-image: linear-gradient(to bottom, #ffd700, #5d4a26) 1; }
+
+.info-item-premium:hover {
+    transform: translateX(10px);
+    background: rgba(40, 40, 40, 0.5);
+}
+
+/* Estructura de la Galería */
+.columna-galeria-bento {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.comp-foto-grande {
+    position: relative;
+    height: 300px;
+    border: 1px solid #c5a059;
+    overflow: hidden;
+}
+
+.fila-inferior-galeria {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    height: 250px;
+}
+
+.stack-vertical-mini {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.foto-mediana, .foto-mini {
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    overflow: hidden;
+}
+
+/* Estilo de imágenes */
+.columna-galeria-bento img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.columna-galeria-bento div:hover img {
+    transform: scale(1.05);
+}
+
+/* Badge dorado */
+.badge-torneo {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffd700;
+    padding: 5px 12px;
+    font-size: 0.75rem;
+    border: 1px solid #c5a059;
+    letter-spacing: 1px;
 }
 
 .linea-roja-decorativa {
