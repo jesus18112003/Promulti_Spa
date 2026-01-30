@@ -413,6 +413,8 @@ main {
     margin: 0; 
 }
 .civ-card {
+    position: relative;
+    overflow: hidden; 
     background: rgba(255, 255, 255, 0.03); /* Efecto cristalino */
     border: 1px solid rgba(197, 160, 89, 0.1);
     padding: 15px 5px; /* Menos padding vertical */
@@ -426,7 +428,7 @@ main {
     aspect-ratio: 0.9 / 1; /* Ligeramente más alta que ancha para el texto */
     border-radius: 4px;
     z-index: 1;
-    overflow: hidden; /* Importante para el brillo */
+    /* Importante para el brillo */
 }
 
 .civ-card::after {
@@ -594,18 +596,21 @@ main {
 
 /* PANEL LATERAL CIVIS */
 .side-panel {
-    max-height: 100vh;
-    overflow: hidden;
     position: fixed;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow: hidden;
     top: 0;
     right: -450px; /* Escondido a la derecha */
-    width: 400px;
+    width: 100%;
+    max-width: 400px !important; /* Pero no pases de 400px en tablets/PC */
     height: 100vh;
     background: linear-gradient(180deg, #1a0505 0%, #050505 100%);
     border-left: 1px solid var(--dorado);
     z-index: 9000;
     transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 40px 30px;
+    padding: 60px 20px 40px 20px !important; 
+    box-sizing: border-box !important;
     box-shadow: -10px 0 30px rgba(0,0,0,0.8);
 }
 
@@ -1301,6 +1306,64 @@ main {
     transform: translateX(-50%) translateZ(50px) scale(1.1);
 }
 
+.cta-final {
+    /* 1. Reducimos el ancho máximo y centramos */
+    max-width: 900px;
+    margin: 60px auto; /* 60px de espacio arriba/abajo y auto a los lados */
+    
+    /* 2. Le damos forma de tarjeta */
+    padding: 60px 40px;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #080808 100%);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    border-radius: 12px; /* Bordes redondeados para que parezca una carta */
+    
+    /* 3. Sombra para dar profundidad sobre el fondo negro */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 
+                inset 0 0 20px rgba(197, 160, 89, 0.05);
+    
+    text-align: center;
+}
+
+.cta-titulo {
+    font-family: 'Cinzel', serif; /* O la fuente medieval que uses */
+    color: #c5a059;
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+}
+
+.cta-subtitulo {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* El botón estrella */
+.btn-steam-grande {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(135deg, #c5a059 0%, #8c6d31 100%);
+    color: #000;
+    padding: 18px 40px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-steam-grande:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 15px 30px rgba(197, 160, 89, 0.3);
+    background: linear-gradient(135deg, #ffd700 0%, #c5a059 100%);
+}
+
 .footer-cta {
     background: linear-gradient(to right, #4a0000, #1a0000, #4a0000);
     padding: 60px 20px;
@@ -1399,7 +1462,7 @@ main {
     gap: 15px;
 }
 
-.foto-mediana, .foto-mini {
+.comp-foto-mediana, .comp-foto-mini {
     border: 1px solid rgba(197, 160, 89, 0.2);
     overflow: hidden;
 }
@@ -1982,24 +2045,191 @@ main {
     border-right: 5px solid transparent;
 }
 
+.main-footer {
+    background-color: #050505;
+    color: #888;
+    padding: 60px 20px 20px;
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-logo {
+    color: #c5a059;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.footer-logo span {
+    display: block;
+    font-size: 0.7rem;
+    color: #8c6d31;
+}
+
+.footer-section h4 {
+    color: #c5a059;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.9rem;
+}
+
+.footer-section ul li a:hover {
+    color: #ffd700;
+}
+
+/* Parte Inferior */
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.disclaimer {
+    margin-top: 10px;
+    font-size: 0.7rem;
+    opacity: 0.5;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 
 /* Ajuste para móviles */
 @media (max-width: 768px) {
+    
+    .civ-card::before { /* O la clase que uses para el brillo */
+        display: none !important;
+    }
+
+    .escena-competitiva, 
+    .competitiva-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 10px !important;
+    }
+
+    /* 2. Las tarjetas de texto ocupan todo el ancho */
+    .tarjeta-competitiva, 
+    .bloque-info {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 3. ¡ESTA ES LA CLAVE! El contenedor de imágenes */
+    /* Lo convertimos en una columna para que no se aplasten de lado */
+    .contenedor-imagenes, 
+    .grid-derecho { 
+        display: flex !important;
+        flex-direction: column !important; 
+        width: 100% !important;
+        height: auto !important; /* Evita que colapsen a 0px */
+        gap: 15px !important;
+    }
+
+    /* 4. Forzamos a las imágenes a ser visibles y proporcionales */
+    .contenedor-imagenes img,
+    .grid-derecho img,
+    .escena-competitiva img {
+        width: 100% !important; /* Ocupa el ancho del celular */
+        height: 250px !important; /* Le damos una altura fija para que no desaparezca */
+        object-fit: cover !important; /* Mantiene la calidad sin deformar */
+        border: 1px solid rgba(197, 160, 89, 0.4) !important;
+        display: block !important;
+    }
+}
+
     .recursos-grid {
         grid-template-columns: 1fr 1fr; /* 2 columnas en móvil */
     }
 
     /* El panel ahora ocupa todo el ancho */
     .side-panel {
-        width: 100%;
-        right: -100%; /* Se esconde totalmente a la derecha */
-        border-left: none;
-        border-top: 2px solid var(--dorado); /* Borde superior en lugar de lateral */
-    }
+    position: fixed !important; /* Lo saca del flujo para que no rompa la página */
+    top: 0 !important;
+    right: -100%;             /* Escondido por defecto */
+    width: 100% !important;    /* En móvil, que ocupe todo el ancho */
+    max-width: 450px !important; /* En PC, que no pase de 450px */
+    height: 100vh !important;  /* Altura completa de la pantalla */
+    background-color: #1a0a05 !important; /* Tu color oscuro de fondo */
+    z-index: 10000 !important; /* Por encima de todo */
+    overflow-y: auto !important; 
+    overflow-x: hidden !important;
+    z-index: 10000;
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.8);
+    display: block !important; /* Evita que otros estilos lo oculten mal */
+    visibility: hidden; /* Lo hace invisible e "intocable" para el ancho de la web */
+    pointer-events: none; /* Evita que el usuario lo toque por error mientras está oculto */
+}
 
+.side-panel::-webkit-scrollbar {
+    width: 8px; /* Un ancho elegante */
+}
+
+.side-panel::-webkit-scrollbar-track {
+    background: #1a0a05; /* Fondo oscuro que combine con tu panel */
+}
+
+.side-panel::-webkit-scrollbar-thumb {
+    background: #c5a059; /* El dorado de tu diseño */
+    border-radius: 10px;
+    border: 2px solid #1a0a05; /* Esto hace que la barra se vea más delgada y fina */
+}
+
+/* Para Firefox */
+.side-panel {
+    scrollbar-width: thin;
+    scrollbar-color: #c5a059 #1a0a05;
+}
+
+#contenido-panel-civ {
+    overflow: visible !important; /* Eliminamos la barra interna */
+    height: auto !important;      /* Dejamos que crezca libremente */
+}
+.panel-scroll, .panel-interior {
+    overflow: visible !important; 
+    height: auto !important;
+    display: block !important;
+}
     .side-panel.active {
+        visibility: visible;
+    pointer-events: auto;
         right: 0;
     }
 
@@ -2014,7 +2244,7 @@ main {
         padding: 20px;
     }
 
-}
+
 
 @media (max-width: 768px) {
     /* 1. Ajuste del Layout Principal */
@@ -2142,6 +2372,8 @@ main {
     border: 1px solid var(--dorado);
     pointer-events: none;
 }
+
+
 
 
 }
@@ -2774,5 +3006,7 @@ main {
         grid-column: span 1 !important;
         grid-row: span 1 !important;
     }
+
+    
 
 }

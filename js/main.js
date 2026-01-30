@@ -1428,11 +1428,11 @@ function cargarSeccion(seccion) {
                     <div class="badge-torneo">WORLD CHAMPIONSHIP SERIES</div>
                 </div>
                 <div class="fila-inferior-galeria">
-                    <div class="foto-mediana">
+                    <div class="comp-foto-mediana">
                         <img src="assets/img/hera.jpg" alt="Jugador">
                     </div>
                     <div class="stack-vertical-mini">
-                        <div class="foto-mini"><img src="assets/img/red.jpg" alt="Evento"></div>
+                        <div class="comp-foto-mini"><img src="assets/img/red.jpg" alt="Evento"></div>
                     </div>
                 </div>
             </div>
@@ -1811,6 +1811,7 @@ function mostrarDetalleCiv(idCiv) {
             }
         }, 300); // 300ms es el tiempo estándar de las transiciones CSS
     }, 10);
+    document.body.style.overflow = "hidden";
 }
 
 // Función para cerrar el panel
@@ -1834,6 +1835,7 @@ function cerrarPanelCiv() {
             panel.style.display = "none";
         }
     }, 500);
+    document.body.style.overflow = "auto";
 }
 document.addEventListener("DOMContentLoaded", () => cargarSeccion('inicio'));
 
