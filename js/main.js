@@ -603,6 +603,155 @@ const civilizacionesAoE = [
             { nombre: "Mahāyāna ", efecto: "los aldeanos y los monjes ocupan un 10 % menos de espacio de población.", img: "assets/img/unidades/tec.webp" }
         ]
     },
+    {
+        id: 'Tartaros',
+        nombre: "LOS TARTAROS",
+        region: "Asia Central",
+        icono: "assets/img/CivIcon-tart.webp",
+        imgCastillo: "assets/img/castillos/tart.webp",
+        tipo: "Civilización de caballería y arqueros montados",
+        audio: "assets/audio/tart.mp3",
+        bonos: [
+            "El ganado dura un 50 % más.",
+            "Las unidades infligen un 25 % más de daño cuando luchan desde una posición elevada.",
+            "Los nuevos centros urbanos generan 2 ovejas a partir de la Edad de los Castillos.",
+            "Tácticas de los partias y dactileras gratis.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Keshik", img: "assets/img/unidades/kesh.webp" },
+            { nombre: "Camello Flameante", img: "assets/img/unidades/fla.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/tart.webp",
+        nombreMaravilla: "Observatorio de Ulugh Beg",
+        tecsUnicas: [
+            { nombre: "Armadura de seda", efecto: "(la caballería ligera y los arqueros a caballo reciben +1 de armadura cuerpo a cuerpo/+1 de armadura antiperforación.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Tácticas de asedio timúridas", efecto: "trebuchets: +2 de alcance.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'bereberes',
+        nombre: "LOS BEREBERES",
+        region: "Africa",
+        icono: "assets/img/CivIcon-berb.webp",
+        imgCastillo: "assets/img/castillos/berb.webp",
+        tipo: "Civilización naval y de caballería",
+        audio: "assets/audio/berb.mp3",
+        bonos: [
+            "Los aldeanos se mueven un 5 % más rápido en la Edad Oscura y un 10 % más rápido a partir de la Edad Feudal.",
+            "Las unidades de los establos cuestan un 15 % menos en la Edad de los Castillos y un 20 % menos en la Edad Imperial.",
+            "Los barcos se mueven un 10 % más rápido.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Arquero en camello", img: "assets/img/unidades/camelar.webp" },
+            { nombre: "Escaramuzador Zenete", img: "assets/img/unidades/zen.webp" }
+        ],
+        imgMaravilla: "assets/img/maravilla/berb.webp",
+        nombreMaravilla: "Torre de Hassan",
+        tecsUnicas: [
+            { nombre: "Alcazabas", efecto: "los castillos de todo el equipo funcionan un 25 % más rápido.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Camellos magrebíes", efecto: "las unidades a camello regeneran 15 PR por minuto.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'birmanos',
+        nombre: "LOS BIRMANOS",
+        region: "India y el Sudeste Asiático",
+        icono: "assets/img/CivIcon-bir.webp",
+        imgCastillo: "assets/img/castillos/bir.webp",
+        tipo: "Civilización de infantería y artillería",
+        audio: "assets/audio/bir.mp3",
+        bonos: [
+            "Tecnologías de campamento maderero gratis.",
+            "La infantería obtiene +1/2/3 de ataque en las edades Feudal/de los Castillos/Imperial.",
+            "Elefantes de combate: +1 de armadura cuerpo a cuerpo/+1 de armadura antiperforación.",
+            "Las tecnologías del monasterio cuestan un 50 % menos.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Arambai", img: "assets/img/unidades/aram.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/bir.webp",
+        nombreMaravilla: "Pagoda Shwezigon",
+        tecsUnicas: [
+            { nombre: "Caballería manipur", efecto: "la caballería cuenta con +4 de ataque contra soldados a distancia.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Howdah", efecto: "los elefantes de combate ganan +1 de armadura cuerpo a cuerpo/+1 de armadura antiperforación.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'bizantinos',
+        nombre: "LOS BIZANTINOS",
+        region: "Mediterraneo",
+        icono: "assets/img/CivIcon-biza.webp",
+        imgCastillo: "assets/img/castillos/biza.webp",
+        tipo: "Civilización defensiva",
+        audio: "assets/audio/biza.mp3",
+        bonos: [
+            " Los edificios ganan un 10/20/30/40 % más de PR en la Edad Oscura, la Edad Feudal, la Edad de los Castillos y la Edad Imperial, respectivamente.",
+            " Los jinetes de camello, los guerrilleros y los lanceros cuestan un +25 % menos.",
+            "Torres de vigilancia y guardia de la ciudad gratis.",
+            " Avanzar a la Edad Imperial cuesta un 33 % menos.",
+             "Los brulotes y los dromones atacan un 25 % más rápido",
+        ],
+        unidadesUnicas: [
+            { nombre: "Catafracta", img: "assets/img/unidades/cata.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/biza.webp",
+        nombreMaravilla: "basilica de Santa Sofía",
+        tecsUnicas: [
+            { nombre: " Fuego griego", efecto: "los barcos incendiarios ganan +1 de alcance y las torres de bombardeo y los dromones ganan radio de explosión.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Logística", efecto: "las catafractas infligen daño de arrollamiento, ganan +6 de ataque contra la infantería).", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'borgoñeses',
+        nombre: "LOS BORGONES",
+        region: "Europa Occ",
+        icono: "assets/img/CivIcon-borgo.webp",
+        imgCastillo: "assets/img/castillos/borgo.webp",
+        tipo: "Civilización de Caballería y Polvora",
+        audio: "assets/audio/borgo.mp3",
+        bonos: [
+            "Las mejoras económicas están disponibles una edad antes y cuestan un 33 % menos de comida.",
+            "Las tecnologías de los establos cuestan un 50 % menos.",
+            "Mejora a caballeros disponible en la Edad de los Castillos.",
+            "Unidades de pólvora: +25 % más de ataque.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Coustiller", img: "assets/img/unidades/cous.webp" },
+            { nombre: "Milicia Flamenca", img: "assets/img/unidades/flemi.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/borgo.webp",
+        nombreMaravilla: "Ayuntamiento de Bruselas",
+        tecsUnicas: [
+            { nombre: "Viñedos de Borgoña ", efecto: "los agricultores generan oro gradualmente además de comida.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Revolución flamenca", efecto: "todos los aldeanos existentes se transforman en milicia flamenca.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'dravidicos',
+        nombre: "LOS DRÁVIDICOS",
+        region: "Sudáfrica",
+        icono: "assets/img/CivIcon-dravi.webp",
+        imgCastillo: "assets/img/castillos/dravi.webp",
+        tipo: "Civilización de Infantería y Arqueros",
+        audio: "assets/audio/dravi.mp3",
+        bonos: [
+            "Los pescadores y buques de pesca pueden transportar +15.",
+            "Recibes +200 de madera al avanzar a la siguiente edad.",
+            "Los guerrilleros y los arqueros sobre elefantes atacan un 25 % más rápido.",
+            " Las tecnologías de los cuarteles cuestan un 50 % menos.",
+            "Las armas de asedio cuestan un 33 % menos de madera"
+        ],
+        unidadesUnicas: [
+            { nombre: "Urumi", img: "assets/img/unidades/uru.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/dravi.webp",
+        nombreMaravilla: "Templo de Kailasa",
+        tecsUnicas: [
+            { nombre: "Cuerpo de médicos", efecto: "las unidades en elefante regeneran 30 PR por minuto.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Acero wootz ", efecto: "los ataques de infantería y caballería ignoran la armadura.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+
 
 
 ];
@@ -1479,6 +1628,7 @@ function cargarSeccion(seccion) {
             <button class="btn-filtro" onclick="filtrarPorRegion('Mediterraneo', this)">Mediterráneo</button>
             <button class="btn-filtro" onclick="filtrarPorRegion('India y el Sudeste Asiático', this)">India y Sudeste Asiático</button>
             <button class="btn-filtro" onclick="filtrarPorRegion('Oriente Medio', this)">Oriente Medio</button>
+            <button class="btn-filtro" onclick="filtrarPorRegion('Africa', this)">África</button>
             <button class="btn-filtro" onclick="filtrarPorRegion('Asia del Este', this)">Asia del Este</button>
             <button class="btn-filtro" onclick="filtrarPorRegion('Asia Central', this)">Asia Central</button>
             <button class="btn-filtro" onclick="filtrarPorRegion('America', this)">América</button>
