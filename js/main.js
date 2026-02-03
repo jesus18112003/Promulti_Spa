@@ -751,6 +751,433 @@ const civilizacionesAoE = [
             { nombre: "Acero wootz ", efecto: "los ataques de infantería y caballería ignoran la armadura.", img: "assets/img/unidades/tec.webp" }
         ]
     },
+    {
+        id: 'etiopes',
+        nombre: "LOS ETIOPES",
+        region: "Sudáfrica",
+        icono: "assets/img/CivIcon-etiop.webp",
+        imgCastillo: "assets/img/castillos/etiop.webp",
+        tipo: "Civilización de Arqueros",
+        audio: "assets/audio/etiop.mp3",
+        bonos: [
+            "Reciben +100 de oro y +100 de comida al avanzar a la siguiente edad.",
+            "Los arqueros atacan un 18 % más rápido.",
+            "Mejoras de piquero gratis.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Shotelai", img: "assets/img/unidades/shotel.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/etiop.webp",
+        nombreMaravilla: "Biet medhane alem",
+        tecsUnicas: [
+            { nombre: "Herederos regios", efecto: "los shotelai y las unidades a camello reciben -3 de daño de unidades montadas.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Mecanismos de torsión", efecto: "mayor área de daño para unidades del taller de maquinaria de asedio.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'gurjaras',
+        nombre: "LOS GURJARAS",
+        region: "Sudáfrica",
+        icono: "assets/img/CivIcon-gurjar.webp",
+        imgCastillo: "assets/img/castillos/gurjar.webp",
+        tipo: "Civilización de camellos y caballería",
+        audio: "assets/audio/gurjar.mp3",
+        bonos: [
+            "Empieza con 2 arbustos.",
+            " Se puede guarnecer ganado en el molino para producir comida de forma pasiva.",
+            "Las unidades montadas infligen un 20/30/40 % más de daño en las edades Feudal/de los Castillos/Imperial.",
+            " Los barcos pesqueros pueden guarnecerse en los muelles para protegerse.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Chakram", img: "assets/img/unidades/chakram.webp" },
+            { nombre: "Jinete de Shririvamsha", img: "assets/img/unidades/shri.webp" },
+            { nombre: "Explorador a camello", img: "assets/img/unidades/camel0.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/gurjar.webp",
+        nombreMaravilla: "Templo de Somnath",
+        tecsUnicas: [
+            { nombre: " Chatrias", efecto: "las unidades militares cuestan un -25 % menos de comida.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Guardas fronterizos", efecto: "+4 de armadura cuerpo a cuerpo a los jinetes de camello y arqueros sobre elefante.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'italianos',
+        nombre: "LOS ITALIANOS",
+        region: "Sudáfrica",
+        icono: "assets/img/CivIcon-Ita.webp",
+        imgCastillo: "assets/img/castillos/ita.webp",
+        tipo: "Civilización naval y de arqueros",
+        audio: "assets/audio/ita.mp3",
+        bonos: [
+            "Avanzar a la siguiente edad cuesta un 15 % menos.",
+            "Los arqueros a pie y los condotieri obtienen +1 de armadura cuerpo a cuerpo y +1 de armadura antiperforación.",
+            "Las tecnologías de los muelles y de la universidad cuestan un 33 % menos.",
+            "Las unidades de pólvora cuestan un 20 % menos.",
+            "Los buques de pesca cuestan un 15 % menos.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Ballestero Genoves", img: "assets/img/unidades/geno.webp" },
+            { nombre: "Condotiero", img: "assets/img/unidades/condo.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/ita.webp",
+        nombreMaravilla: "Catedral de San lorenzo",
+        tecsUnicas: [
+            { nombre: "Ruta de la seda", efecto: "las unidades mercantes cuestan un 50 % menos.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Pirotecnia", efecto: "los artilleros manuales infligen un 15 % más de daño perforante y son más precisos.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'jemeres',
+        nombre: "LOS JEMERES",
+        region: "India y el Sudeste Asiático",
+        icono: "assets/img/CivIcon-jeme.webp",
+        imgCastillo: "assets/img/castillos/jeme.webp",
+        tipo: "Civilización de asedio y elefantes",
+        audio: "assets/audio/jeme.mp3",
+        bonos: [
+            "No se necesitan edificios para avanzar a la siguiente edad o para desbloquear otros edificios.",
+            "Los granjeros no necesitan molinos o centros urbanos para depositar comida.",
+            "Los aldeanos pueden guarnecerse en casas.",
+            "Los elefantes de combate se mueven un +10 % más rápido.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Elefante con balista", img: "assets/img/unidades/elek.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/jeme.webp",
+        nombreMaravilla: "Angkor Wat",
+        tecsUnicas: [
+            { nombre: " Colmillos de acero.", efecto: "+3 de ataque en elefantes de combate.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Ballesta doble", efecto: "los elefantes con balistas y los escorpiones disparan un proyectil adicional.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'kitans',
+        nombre: "LOS KITANS",
+        region: "Asia oriental",
+        icono: "assets/img/CivIcon-kitan.webp",
+        imgCastillo: "assets/img/castillos/kitan.webp",
+        tipo: "Civilización de infantería y caballería",
+        audio: "assets/audio/kitan.mp3",
+        bonos: [
+            "Las pasturas reemplazan a las granjas.",
+            "Los efectos de mejora de los ataques cuerpo a cuerpo se duplican.",
+            "Los guerrilleros, lanceros y caballería de exploración entrenan y se mejoran un +25 % más rápido.",
+            "Mejora del arquero de caballería pesada disponible en la Edad de los Castillos y cuesta un 50 % menos.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Liao Dao", img: "assets/img/unidades/liao.webp" },
+            { nombre: "Trebuchet Montado", img: "assets/img/unidades/trebm.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/kitan.webp",
+        nombreMaravilla: "Pagoda del templo forgong",
+        tecsUnicas: [
+            { nombre: "Armadura laminada.", efecto: "la infantería y los guerrilleros devuelven un 25 % del daño cuerpo a cuerpo al atacante.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Ballesta doble", efecto: "la caballería regenera puntos de resistencia en combate.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'malayos',
+        nombre: "LOS MALAYOS",
+        region: "India y el Sudeste Asiático",
+        icono: "assets/img/CivIcon-malayo.webp",
+        imgCastillo: "assets/img/castillos/malayo.webp",
+        tipo: "Civilización naval y de infantería",
+        audio: "assets/audio/malayo.mp3",
+        bonos: [
+            "Avanzas a la siguiente edad un 66 % más rápido.",
+            "Mejoras de armadura de infantería gratuitas.",
+            "Los elefantes de combate cuestan un 25/35 % menos en la Edad de los Castillos y en la Edad Imperial.",
+            "Las trampas para peces cuestan un 33 % menos y proporcionan un 200 % más de comida.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Karambit", img: "assets/img/unidades/karam.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/malayo.webp",
+        nombreMaravilla: "Kalasam",
+        tecsUnicas: [
+            { nombre: "Talasocracia.", efecto: "mejora los muelles a puertos.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Leva en masa ", efecto: "la milicia y subsiguientes dejan de costar oro y cuestan comida adicional.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'malies',
+        nombre: "LOS MALÍES",
+        region: "Africa",
+        icono: "assets/img/CivIcon-mali.webp",
+        imgCastillo: "assets/img/castillos/mali.webp",
+        tipo: "Civilización de infantería y caballería",
+        audio: "assets/audio/mali.mp3",
+        bonos: [
+            " Los edificios cuestan un 15 % menos de madera.",
+            "Los aldeanos depositan un 10 % más de oro.",
+            "Las unidades de los cuarteles obtienen +1 de armadura antiperforación en la Edad Feudal,+2 en la Edad de los Castillos y +3 en la Edad Imperial.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Guardiana de Gbeto", img: "assets/img/unidades/gbeto.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/mali.webp",
+        nombreMaravilla: "Gran mezquita de Djenné",
+        tecsUnicas: [
+            { nombre: "Gran asamblea.", efecto: "los centros urbanos disparan flechas sin unidades guarnecidas.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Farimba ", efecto: "+5 de ataque para la caballería.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+     {
+        id: 'portigueses',
+        nombre: "LOS PORTUGUESES",
+        region: "Mediterraneo",
+        icono: "assets/img/CivIcon-Portu.webp",
+        imgCastillo: "assets/img/castillos/portu.webp",
+        tipo: "Civilización naval y de pólvora",
+        audio: "assets/audio/portu.mp3",
+        bonos: [
+            " Los recolectores generan madera además de comida.",
+            "Todas las unidades cuestan un 20 % menos de oro.",
+            "Pueden construir factorías en la Edad Imperial.",
+            "Los barcos tienen un 10 % más de PR.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Cañón de salvas", img: "assets/img/unidades/organ.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/portu.webp",
+        nombreMaravilla: "Torre de la Almazara",
+        tecsUnicas: [
+            { nombre: " Carracas.", efecto: "+1 de armadura y +1 de armadura antiperforación para barcos.", img: "assets/img/unidades/tec.webp" },
+            { nombre: " Arcabuz", efecto: "las unidades de pólvora son más precisas contra objetivos en movimiento", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'romanos',
+        nombre: "LOS ROMANOS",
+        region: "Mediterraneo",
+        icono: "assets/img/CivIcon-Roma.webp",
+        imgCastillo: "assets/img/castillos/roma.webp",
+        tipo: "Civilización de infantería",
+        audio: "assets/audio/roma.mp3",
+        bonos: [
+            "Los aldeanos recolectan, construyen y reparan un +5 % más rápido.",
+            "Los efectos de mejora de armadura de infantería se duplican.",
+            " Los escorpiones cuestan un 60 % menos de oro.",
+            "La línea de galeras y dromones obtiene +1 de armadura cuerpo a cuerpo y +1 de armadura antiperforación.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Centurion", img: "assets/img/unidades/centu.webp" },
+            { nombre: "Legionario", img: "assets/img/unidades/legi.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/roma.webp",
+        nombreMaravilla: "Coliseo",
+        tecsUnicas: [
+            { nombre: " Balistas.", efecto: "los escorpiones atacan un +33 % más rápido; la línea de galeras obtienen +2 de ataque.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Comitatenses", efecto: "las líneas de milicia y caballeros y los centuriones entrenan un +50 % más rápido y reciben un ataque de carga", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'shu',
+        nombre: "LOS SHU",
+        region: "Asia oriental",
+        icono: "assets/img/CivIcon-Shu.webp",
+        imgCastillo: "assets/img/castillos/shu.webp",
+        tipo: "Civilización de arqueros y asedio",
+        audio: "assets/audio/shu.mp3",
+        bonos: [
+            "Los leñadores generan comida adicional, además de madera.",
+            "Las tecnologías de los arqueros de la galería de tiro con arco y del herrero cuestan un 25 % menos.",
+            "Las armas de asedio y los barcos de guerra de asedio se mueven un 10 % o 15 % más rápido en la Edad de los Castillos o la Edad Imperial.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Guarda de Pluma Blanca", img: "assets/img/unidades/guard.webp" },
+            { nombre: "Carro de Guerra", img: "assets/img/unidades/chario.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/shu.webp",
+        nombreMaravilla: "Wuhou templo de chengdu",
+        tecsUnicas: [
+            { nombre: "Arsenal de la serpiente enroscada.", efecto: "la línea de lanceros y los guardias de la pluma blanca obtienen PR adicionales cuando están cerca los unos de los otros.", img: "assets/img/unidades/tec.webp" },
+            { nombre: " Cargador ", efecto: "la línea de arqueros, los carros de guerra y las unidades de Lou Chuan disparan proyectiles adicionales", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+        {
+        id: 'sicilianos',
+        nombre: "LOS SICILIANOS",
+        region: "Mediterraneo",
+        icono: "assets/img/CivIcon-sici.webp",
+        imgCastillo: "assets/img/castillos/sici.webp",
+        tipo: "Civilización de infantería y caballería",
+        audio: "assets/audio/sici.mp3",
+        bonos: [
+            " Se empieza con +100 de piedra.",
+            " Las mejoras de las granjas proporcionan un 125 % de comida adicional.",
+            " Los soldados reciben un 40 % menos de daño.",
+            "  La torre del homenaje se puede construir en la Edad Oscura y reemplaza la línea de atalayas.",
+            "Las fortificaciones se construyen un 50 % más rápido y los centros urbanos un 100 % más rápido.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Sargento", img: "assets/img/unidades/serje.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/sici.webp",
+        nombreMaravilla: "Templo de San Juan de la Mora",
+        tecsUnicas: [
+            { nombre: "Primera cruzada .", efecto: "hasta 5 centros urbanos generan un grupo de 5 serjeants, unidades más resistentes a la conversión.", img: "assets/img/unidades/tec.webp" },
+            { nombre: " Cota de malla ", efecto: "la línea de caballeros obtiene +1 de armadura cuerpo a cuerpo y +2 de armadura antiperforación.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+     {
+        id: 'sarracenos',
+        nombre: "LOS SARRACENOS",
+        region: "Medio Oriente",
+        icono: "assets/img/CivIcon-sarra.webp",
+        imgCastillo: "assets/img/castillos/sarra.webp",
+        tipo: "Civilización naval y de camellos",
+        audio: "assets/audio/sarra.mp3",
+        bonos: [
+            "La tarifa de mercado cuesta solo un 5 %; los mercados cuestan 100 menos de madera.",
+            "Las unidades a camello ganan un 25 % más de PR.",
+            " La línea de galeras ataca un 25 % más rápido.",
+            "  Los barcos de transporte ganan un 100 % más de PR y 20 más de capacidad.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Mameluco", img: "assets/img/unidades/mame.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/sarra.webp",
+        nombreMaravilla: "Mezquita de samarra",
+        tecsUnicas: [
+            { nombre: "Bimaristán.", efecto: "los monjes curan a varias unidades cercanas de forma automática.", img: "assets/img/unidades/tec.webp" },
+            { nombre: " Contrapesos", efecto: "los trebuchets y los mangoneles ganan un +15 % más de ataque.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'turcos',
+        nombre: "LOS TURCOS",
+        region: "Medio Oriente",
+        icono: "assets/img/CivIcon-turco.webp",
+        imgCastillo: "assets/img/castillos/turco.webp",
+        tipo: "Civilización de pólvora",
+        audio: "assets/audio/turco.mp3",
+        bonos: [
+            " Los mineros de oro trabajan un 25 % más rápido.",
+            "La caballería de exploración obtiene +1 de armadura antiperforación y mejoras gratis.",
+            "Química gratis; las tecnologías de la pólvora cuestan un 50 % menos.",
+            "Las unidades de pólvora obtienen un 25 % más de PR.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Jenizaro", img: "assets/img/unidades/jeni.webp" },
+        ],
+        imgMaravilla: "assets/img/maravilla/turco.webp",
+        nombreMaravilla: "Mezquita de suleimán",
+        tecsUnicas: [
+            { nombre: " Sipahi.", efecto: "los arqueros montados obtienen +20 de PR.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Artillería  Contrapesos", efecto: "las torres de bombarda, los cañones de asedio y los galeones artillados obtienen +2 de alcance.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+     {
+        id: 'vietnamitas',
+        nombre: "LOS VIETNAMITAS",
+        region: "India y el Sudeste Asiático",
+        icono: "assets/img/CivIcon-viet.webp",
+        imgCastillo: "assets/img/castillos/viet.webp",
+        tipo: "Civilización de Elefantes y arqueros",
+        audio: "assets/audio/viet.mp3",
+        bonos: [
+            "Revela los centros urbanos enemigos al inicio de la partida.",
+            " Las mejoras económicas no cuestan madera y se investigarán un +100 % más rápido.",
+            "Unidades de la galería de tiro con arco y lanceros incendiarios: +20 % PR.",
+            "Leva gratis.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Arquero de Ratan", img: "assets/img/unidades/ratan.webp" },
+            { nombre: "Guerrillero Imperial", img: "assets/img/unidades/guerri3.webp" },
+
+        ],
+        imgMaravilla: "assets/img/maravilla/viet.webp",
+        nombreMaravilla: "Templo but thap",
+        tecsUnicas: [
+            { nombre: "Chatras.", efecto: "elefantes de combate: +100 PR.", img: "assets/img/unidades/tec.webp" },
+            { nombre: " Papel moneda", efecto: "además de madera, los leñadores generan oro gradualmente.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'wei',
+        nombre: "LOS WEI",
+        region: "Asia occidental",
+        icono: "assets/img/CivIcon-wei.webp",
+        imgCastillo: "assets/img/castillos/wei.webp",
+        tipo: "Civilización de caballería",
+        audio: "assets/audio/wei.mp3",
+        bonos: [
+            "Recibe un aldeano gratis por cada mejora de economía investigada.",
+            " Las mejoras económicas no cuestan madera y se investigarán un +100 % más rápidoLa caballería de Hei Guang y el saqueador xianbei obtienen un 20/30 % más de PR en la Edad de los Castillos y la Edad Imperial, respectivamente.",
+            " Los mangoneles y las unidades de Lou Chuan cuestan un 25 % menos.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Caballeria Tigresa", img: "assets/img/unidades/tigresa.webp" },
+            { nombre: "Saqueador Xianbei", img: "assets/img/unidades/xianbei.webp" },
+
+        ],
+        imgMaravilla: "assets/img/maravilla/wei.webp",
+        nombreMaravilla: "Pagoda songyue",
+        tecsUnicas: [
+            { nombre: "Tuntian.", efecto: "los soldados producen alimentos de forma pasiva.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Armadura de Ming Guang ", efecto: "las unidades montadas obtiene +4 de armadura cuerpo a cuerpo.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'wu',
+        nombre: "LOS WU",
+        region: "Asia occidental",
+        icono: "assets/img/CivIcon-wu.webp",
+        imgCastillo: "assets/img/castillos/wu.webp",
+        tipo: "Civilización de infantería y naval",
+        audio: "assets/audio/wu.mp3",
+        bonos: [
+            " Los muelles y los edificios de producción militar proporcionan +65 de comida.",
+            "La infantería se regenera 10/20/30 PR por minuto en la Edad Feudal, de los Castillos o Imperial.",
+            "Los espadachines de Jian y la caballería de Hei Guang obtienen +2 de ataque en la Edad Imperial.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Arquero de fuego", img: "assets/img/unidades/fire.webp" },
+            { nombre: "Espadachín de Jian", img: "assets/img/unidades/jian.webp" },
+
+        ],
+        imgMaravilla: "assets/img/maravilla/wu.webp",
+        nombreMaravilla: "Templo de Jing'an",
+        tecsUnicas: [
+            { nombre: "Tácticas de los Acantilados Rojos.", efecto: "los barcos de demolición y los arqueros de fuego infligen daño por fuego a los barcos y edificios.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Tigre sentado", efecto: "(los mangoneles y los trebuchets de Lou Chuan disparan proyectiles adicionales.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+    {
+        id: 'Jurchens',
+        nombre: "LOS JURCHENS",
+        region: "Asia oriental",
+        icono: "assets/img/CivIcon-yur.webp",
+        imgCastillo: "assets/img/castillos/jurch.webp",
+        tipo: "Civilización de caballería y pólvora",
+        audio: "assets/audio/jurch.mp3",
+        bonos: [
+            "La carne de los animales que caces y del ganado no se descompone.",
+            "Las unidades montadas y los lanceros incendiarios atacan un 25 % más rápido a partir de la Edad Feudal.",
+            "Los ingenieros de asedio están disponibles en la Edad de los Castillos.",
+            "Las mejoras de asedio y fortificación cuestan un 75 % menos de madera y se investigan un 100 % más rápido.",
+            "Las unidades reciben un 50 % menos de daño por fuego amigo.",
+        ],
+        unidadesUnicas: [
+            { nombre: "Pagoda de Hierro", img: "assets/img/unidades/iron.webp" },
+            { nombre: "Granadero", img: "assets/img/unidades/gran.webp" },
+
+        ],
+        imgMaravilla: "assets/img/maravilla/jurch.webp",
+        nombreMaravilla: "Bosque de Pagodas Yingshan",
+        tecsUnicas: [
+            { nombre: " Bastiones fortificados.", efecto: "las fortificaciones regeneran 500 puntos de resistencia por minuto.", img: "assets/img/unidades/tec.webp" },
+            { nombre: "Bombas trueno", efecto: "los carros de cohetes, los granaderos y los Lou Chuan detonan al ser derrotados; los proyectiles producen explosiones adicionales.", img: "assets/img/unidades/tec.webp" }
+        ]
+    },
+
+
+
+
+
+
+
 
 
 
@@ -986,6 +1413,14 @@ const unidadesData = [
         hp: 100, atk: 6, arm: '0/0', 
         desc: 'Unidad de caballería especialista en cazar otros jinetes. Tiene un gran bonus contra caballería.',
         evoluciones: [
+            { 
+            nombre: 'Explorador a camello', 
+            costo: 'Inicial / 55A 60O', 
+            mejora: 'Nueva Mejora', 
+            stats: '<i class="fas fa-heart stat-hp"></i> 70 <i class="fas fa-fist-raised stat-atk"></i> 5 <i class="fas fa-shield-alt stat-def"></i> 3/4 (+ Atk, vida y velocidad)', 
+            img:'assets/img/unidades/camel0.webp',
+            especial: 'ÚNICA: GURJARAS' 
+        },
             { nombre: 'Camello', costo: 'Básico', stats: '<i class="fas fa-heart stat-hp"></i> 100 <i class="fas fa-fist-raised stat-atk"></i> 6 <i class="fas fa-shield-alt stat-def"></i> 0/0', mejora: 'Unidad Base', img:'assets/img/unidades/camel.webp' },
             { nombre: 'Camello Pesado', costo: '325A 360O', stats: '<i class="fas fa-heart stat-hp"></i> 120 <i class="fas fa-fist-raised stat-atk"></i> 7 <i class="fas fa-shield-alt stat-def"></i> 0/0', mejora: '+20 HP, +1 ATK', img:'assets/img/unidades/camel2.webp' },
             { 
