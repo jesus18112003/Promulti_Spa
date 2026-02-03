@@ -1590,10 +1590,12 @@ main {
 .enciclopedia-main {
     flex: 1;
     padding: 50px;
-    overflow-y: auto;
+    overflow-y: scroll !important;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
+    
 }
+
 
 .enciclopedia-header {
     display: flex;
@@ -1655,6 +1657,19 @@ main {
     gap: 30px;
     padding-bottom: 40px;
 }
+
+.unidades-grid-scroll::before {
+    content: "↓ DESLIZA PARA VER MÁS ARSENAL ↓";
+    display: block;
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #8b0000; /* Rojo AoE */
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
 
 .unidad-card-premium {
     background: linear-gradient(145deg, rgba(30, 30, 30, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);

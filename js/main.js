@@ -1294,95 +1294,7 @@ const unidadesData = [
             }
         ]
     },
-    {
-        id: 'catafracta',
-        nombre: 'Catafracta',
-        imagen: 'assets/img/unidades/cata.webp',
-        tipo: 'Caballeria',
-        hp: 110, 
-        atk: 9, 
-        arm: '2/1',
-        especial: 'ÚNICA: BIZANTINOS',
-        desc: 'Caballería pesada bizantina con armadura de placas. Excelente contra infantería.',
-        evoluciones: [
-            { 
-                nombre: 'Catafracta', 
-                costo: '60A 75O', 
-                mejora: 'Unidad Base', 
-                stats: '110 HP / 9 ATK', 
-                img: 'assets/img/unidades/cata.webp' 
-            },
-            { 
-                nombre: 'Catafracta de Élite', 
-                costo: '1600A 800O', 
-                mejora: '+40 HP, +3 ATK', 
-                stats: '150 HP / 12 ATK', 
-                img: 'assets/img/unidades/cata2.webp' 
-            },
-            { 
-                nombre: 'Logística', 
-                costo: '1000A 600O', 
-                mejora: 'Daño por pisoteo', 
-                stats: 'Daño en área', 
-                img: 'assets/img/unidades/tec.webp',
-                especial: 'TECNOLOGÍA ÚNICA' 
-            }
-        ]
-    },
-    {
-        id: 'coustiller',
-        nombre: 'Coustillier',
-        imagen: 'assets/img/unidades/cous.webp',
-        tipo: 'Caballeria',
-        hp: 115, 
-        atk: 8, 
-        arm: '2/2',
-        especial: 'ÚNICA: BORGOÑESES',
-        desc: 'Caballería media borgoñes con un ataque de carga. Excelente contra infantería y arqueros.',
-        evoluciones: [
-            { 
-                nombre: 'Coustillier', 
-                costo: '60A 75O', 
-                mejora: 'Unidad Base', 
-                stats: '115 HP / 8 ATK', 
-                img: 'assets/img/unidades/cous.webp' 
-            },
-            { 
-                nombre: 'Coustillier de Élite', 
-                costo: '1600A 800O', 
-                mejora: '+30 HP, +3 ATK', 
-                stats: '145 HP / 11 ATK', 
-                img: 'assets/img/unidades/cous2.webp' 
-            },
-        ]
-    },
-    {
-        id: 'pagoda',
-        nombre: 'Pagoda de hierro',
-        imagen: 'assets/img/unidades/iron.webp',
-        tipo: 'Caballeria',
-        hp: 115, 
-        atk: 12, 
-        arm: '1/3',
-        especial: 'ÚNICA: YURCHENS',
-        desc: 'Caballería pesada yurchen bloquea 1 ataque cada cierto tiempo. Excelente contra arqueros y otras caballerías.',
-        evoluciones: [
-            { 
-                nombre: 'Pagoda de hierro', 
-                costo: '60A 75O', 
-                mejora: 'Unidad Base', 
-                stats: '115 HP / 12 ATK', 
-                img: 'assets/img/unidades/iron.webp' 
-            },
-            { 
-                nombre: 'Pagoda de hierro de Élite', 
-                costo: '1600A 800O', 
-                mejora: '+25 HP, +1 ATK', 
-                stats: '140 HP / 13 ATK', 
-                img: 'assets/img/unidades/iron2.webp' 
-            },
-        ]
-    },    
+       
 
     { 
         id: 'jinete', 
@@ -1490,6 +1402,484 @@ const unidadesData = [
         }
         ]
     },
+    {
+        id: 'catafracta',
+        nombre: 'Catafracta',
+        imagen: 'assets/img/unidades/cata.webp',
+        tipo: 'Caballeria',
+        hp: 110, 
+        atk: 9, 
+        arm: '2/1',
+        especial: 'ÚNICA: BIZANTINOS',
+        desc: 'Caballería pesada bizantina con armadura de placas. Excelente contra infantería.',
+        evoluciones: [
+            { 
+                nombre: 'Catafracta', 
+                costo: '60A 75O', 
+                mejora: 'Unidad Base', 
+                stats: '110 HP / 9 ATK', 
+                img: 'assets/img/unidades/cata.webp' 
+            },
+            { 
+                nombre: 'Catafracta de Élite', 
+                costo: '1600A 800O', 
+                mejora: '+40 HP, +3 ATK', 
+                stats: '150 HP / 12 ATK', 
+                img: 'assets/img/unidades/cata2.webp' 
+            },
+            { 
+                nombre: 'Logística', 
+                costo: '1000A 600O', 
+                mejora: 'Daño por pisoteo', 
+                stats: 'Daño en área', 
+                img: 'assets/img/unidades/tec.webp',
+                especial: 'TECNOLOGÍA ÚNICA' 
+            }
+        ]
+    },
+    {
+        id: 'coustiller',
+        nombre: 'Coustillier',
+        imagen: 'assets/img/unidades/cous.webp',
+        tipo: 'Caballeria',
+        hp: 115, 
+        atk: 8, 
+        arm: '2/2',
+        especial: 'ÚNICA: BORGOÑESES',
+        desc: 'Caballería media borgoñes con un ataque de carga. Excelente contra infantería y arqueros.',
+        evoluciones: [
+            { 
+                nombre: 'Coustillier', 
+                costo: '60A 75O', 
+                mejora: 'Unidad Base', 
+                stats: '115 HP / 8 ATK', 
+                img: 'assets/img/unidades/cous.webp' 
+            },
+            { 
+                nombre: 'Coustillier de Élite', 
+                costo: '1600A 800O', 
+                mejora: '+30 HP, +3 ATK', 
+                stats: '145 HP / 11 ATK', 
+                img: 'assets/img/unidades/cous2.webp' 
+            },
+        ]
+    },
+    {
+        id: 'pagoda',
+        nombre: 'Pagoda de hierro',
+        imagen: 'assets/img/unidades/iron.webp',
+        tipo: 'Caballeria',
+        hp: 115, 
+        atk: 12, 
+        arm: '1/3',
+        especial: 'ÚNICA: YURCHENS',
+        desc: 'Caballería pesada yurchen bloquea 1 ataque cada cierto tiempo. Excelente contra arqueros y otras caballerías.',
+        evoluciones: [
+            { 
+                nombre: 'Pagoda de hierro', 
+                costo: '60A 75O', 
+                mejora: 'Unidad Base', 
+                stats: '115 HP / 12 ATK', 
+                img: 'assets/img/unidades/iron.webp' 
+            },
+            { 
+                nombre: 'Pagoda de hierro de Élite', 
+                costo: '950A 650O', 
+                mejora: '+25 HP, +1 ATK', 
+                stats: '140 HP / 13 ATK', 
+                img: 'assets/img/unidades/iron2.webp' 
+            },
+        ]
+    }, 
+    {
+        id: 'tigresa',
+        nombre: 'Caballeria Tigresa',
+        imagen: 'assets/img/unidades/tigresa.webp',
+        tipo: 'Caballeria',
+        hp: 115, 
+        atk: 11, 
+        arm: '0/5',
+        especial: 'ÚNICA: WEI',
+        desc: 'Caballería exclusiva de los Wei que obtiene PR y ataque al derrotar ejércitos enemigos. Extraordinariamente fuerte contra soldados a distancia.',
+        evoluciones: [
+            { 
+                nombre: 'Caballeria Tigresa', 
+                costo: '60A 75O', 
+                mejora: 'Unidad Base', 
+                stats: '115 HP / 11 ATK', 
+                img: 'assets/img/unidades/tigresa.webp' 
+            },
+            { 
+                nombre: 'Caballeria Tigresa de Élite', 
+                costo: '1000A 800O', 
+                mejora: '+15 HP, +2 ATK', 
+                stats: '130 HP / 13 ATK', 
+                img: 'assets/img/unidades/tigresa2.webp' 
+            },
+            { 
+                nombre: 'Armadura Min Guang', 
+                costo: '600A 450O', 
+                mejora: '+4 Armadura Cuerpo a Cuerpo', 
+                stats: '+4 Armadura Cuerpo a Cuerpo', 
+                img: 'assets/img/unidades/tec.webp',
+                especial: 'TECNOLOGÍA ÚNICA' 
+            }
+        ]
+    },
+    {
+        id: 'Centurion',
+        nombre: 'Centurion',
+        imagen: 'assets/img/unidades/centu.webp',
+        tipo: 'Caballeria',
+        hp: 110, 
+        atk: 13, 
+        arm: '2/3',
+        especial: 'ÚNICA: ROMANOS',
+        desc: 'Unidad de caballería pesada romana única que aumenta el movimiento y la velocidad de ataque de las unidades cercanas de la línea de milicia.',
+        evoluciones: [
+            { 
+                nombre: 'Centurion', 
+                costo: '60A 75O', 
+                mejora: 'Unidad Base', 
+                stats: '115 HP / 11 ATK', 
+                img: 'assets/img/unidades/centu.webp' 
+            },
+            { 
+                nombre: 'Centurion de Élite', 
+                costo: '1100A 00O', 
+                mejora: '+15 HP, +2 ATK', 
+                stats: '130 HP / 13 ATK', 
+                img: 'assets/img/unidades/centu2.webp' 
+            },
+            { 
+                nombre: 'Comitatenses', 
+                costo: '700A 800O', 
+                mejora: 'Las unidades de la línea de milicia, caballeros y centuriones entrenan un 50 % más rápido y obtienen un ataque de carga.', 
+                stats: '+9 ataque de carga y +50% velocidad de entrenamiento', 
+                img: 'assets/img/unidades/tec.webp',
+                especial: 'TECNOLOGÍA ÚNICA' 
+            }
+        ]
+    }, 
+    {
+        id: 'Boyardo',
+        nombre: 'Boyardo',
+        imagen: 'assets/img/unidades/boyar.webp',
+        tipo: 'Caballeria',
+        hp: 100, 
+        atk: 12, 
+        arm: '4/2',
+        especial: 'ÚNICA: ESLAVOS',
+        desc: 'Unidad de caballería exclusiva eslava con una excepcional armadura cuerpo a cuerpo.',
+        evoluciones: [
+            { 
+                nombre: 'Boyardo', 
+                costo: '60A 70O', 
+                mejora: 'Unidad Base', 
+                stats: '100 HP / 12 ATK', 
+                img: 'assets/img/unidades/boyar.webp' 
+            },
+            { 
+                nombre: 'Boyardo de Élite', 
+                costo: '1100A 600O', 
+                mejora: '+30 HP, +2 ATK', 
+                stats: '130 HP / 14 ATK', 
+                img: 'assets/img/unidades/boyar2.webp' 
+            },
+        ]
+    },
+    {
+        id: 'Keshik',
+        nombre: 'Keshik',
+        imagen: 'assets/img/unidades/kesh.webp',
+        tipo: 'Caballeria',
+        hp: 120, 
+        atk: 9, 
+        arm: '1/2',
+        especial: 'ÚNICA: TARTAROS',
+        desc: 'Unidad de caballería pesada exclusiva de los tártaros que genera oro al luchar contra otras unidades. Fuerte contra unidades de arqueros.',
+        evoluciones: [
+            { 
+                nombre: 'Keshik', 
+                costo: '60A 40O', 
+                mejora: 'Unidad Base', 
+                stats: '120 HP / 9 ATK', 
+                img: 'assets/img/unidades/kesh.webp' 
+            },
+            { 
+                nombre: 'Keshik de Élite', 
+                costo: '700A 600O', 
+                mejora: '+25 HP, +2 ATK', 
+                stats: '145 HP / 11 ATK', 
+                img: 'assets/img/unidades/kesh2.webp' 
+            },
+        ]
+    },
+    {
+        id: 'Konnink',
+        nombre: 'Konnink',
+        imagen: 'assets/img/unidades/konni.webp',
+        tipo: 'Caballeria',
+        hp: 100, 
+        atk: 12, 
+        arm: '2/2',
+        especial: 'ÚNICA: BULGAROS',
+        desc: 'Unidad de caballería pesada exclusiva de los búlgaros que lucha como infantería tras ser derribada.',
+        evoluciones: [
+            { 
+                nombre: 'Konnink', 
+                costo: '60A 70O', 
+                mejora: 'Unidad Base', 
+                stats: '100 HP / 12 ATK', 
+                img: 'assets/img/unidades/konni.webp' 
+            },
+            { 
+                nombre: 'Konnink de Élite', 
+                costo: '700A 600O', 
+                mejora: '+20 HP, +2 ATK', 
+                stats: '120 HP / 14 ATK', 
+                img: 'assets/img/unidades/konni2.webp' 
+            },
+            { 
+                nombre: 'Estribos', 
+                costo: '700A 800O', 
+                mejora: 'La caballería ataca un 33 % más rápido.', 
+                stats: '33% Velocidad de Ataque', 
+                img: 'assets/img/unidades/tec.webp',
+                especial: 'TECNOLOGÍA ÚNICA' 
+            }
+        ]
+    }, 
+    {
+        id: 'Leitis ',
+        nombre: 'Leitis',
+        imagen: 'assets/img/unidades/leiti.webp',
+        tipo: 'Caballeria',
+        hp: 100, 
+        atk: 13, 
+        arm: '1/1',
+        especial: 'ÚNICA: LITUANOS',
+        desc: 'Caballería pesada exclusiva de los lituanos que ignora la armadura.',
+        evoluciones: [
+            { 
+                nombre: 'Leitis', 
+                costo: '70A 50O', 
+                mejora: 'Unidad Base', 
+                stats: '100 HP / 13 ATK', 
+                img: 'assets/img/unidades/leiti.webp' 
+            },
+            { 
+                nombre: 'Leitis de Élite', 
+                costo: '700A 750O', 
+                mejora: '+30 HP, +3 ATK', 
+                stats: '120 HP / 16 ATK', 
+                img: 'assets/img/unidades/leiti2.webp' 
+            },
+        ]
+    },
+    {
+        id: 'Huzar Magiar',
+        nombre: 'Huzar Magiar',
+        imagen: 'assets/img/unidades/magy.webp',
+        tipo: 'Caballeria',
+        hp: 80, 
+        atk: 10, 
+        arm: '0/2',
+        especial: 'ÚNICA: MAGIARES',
+        desc: 'Jinete ligero exclusivo de los magiares. Fuerte contra armas de asedio.',
+        evoluciones: [
+            { 
+                nombre: 'Huzar Magiar', 
+                costo: '35A 45O', 
+                mejora: 'Unidad Base', 
+                stats: '80 HP / 10 ATK', 
+                img: 'assets/img/unidades/magy.webp' 
+            },
+            { 
+                nombre: 'Huzar Magiar de Élite', 
+                costo: '800A 600O', 
+                mejora: '+10 HP, +1 ATK', 
+                stats: '90 HP / 11 ATK', 
+                img: 'assets/img/unidades/magy2.webp' 
+            },
+            { 
+                nombre: 'Ejercito Corviniano', 
+                costo: '200A 300O', 
+                mejora: 'Los huszár magiares dejan de costar oro y pasan a costar más comida..', 
+                stats: 'Nuevo precio: 80A 0O', 
+                img: 'assets/img/unidades/tec.webp',
+                especial: 'TECNOLOGÍA ÚNICA' 
+            }
+            
+        ]
+    }, 
+    {
+        id: 'Mameluco',
+        nombre: 'Mameluco',
+        imagen: 'assets/img/unidades/mame.webp',
+        tipo: 'Caballeria',
+        hp: 80, 
+        atk: 8, 
+        arm: '0/0',
+        especial: 'ÚNICA: SARRACENOS',
+        desc: 'Unidad de caballería exclusiva de los sarracenos con ataque cuerpo a cuerpo a distancia. Fuerte contra unidades montadas. ',
+        evoluciones: [
+            { 
+                nombre: 'Mameluco', 
+                costo: '55A 85O', 
+                mejora: 'Unidad Base', 
+                stats: '80 HP / 8 ATK', 
+                img: 'assets/img/unidades/mame.webp' 
+            },
+            { 
+                nombre: 'Mameluco de Élite', 
+                costo: '600A 500O', 
+                mejora: ', +2 ATK', 
+                stats: '80 HP / 10 ATK', 
+                img: 'assets/img/unidades/mame2.webp' 
+            },
+        ]
+    },
+    {
+        id: 'Monaspa',
+        nombre: 'Monaspa',
+        imagen: 'assets/img/unidades/monas.webp',
+        tipo: 'Caballeria',
+        hp: 70, 
+        atk: 12, 
+        arm: '3/2',
+        especial: 'ÚNICA: GEORGIANOS',
+        desc: 'Caballería pesada exclusiva de los georgianos que se vuelve más fuerte cuando hay otros monaspas o unidades de caballería cerca.',
+        evoluciones: [
+            { 
+                nombre: 'Monaspa', 
+                costo: '55A 85O', 
+                mejora: 'Unidad Base', 
+                stats: '70 HP / 12 ATK', 
+                img: 'assets/img/unidades/monas.webp' 
+            },
+            { 
+                nombre: 'Monaspa de Élite', 
+                costo: '800A 600O', 
+                mejora: '+10 HP, +2 ATK', 
+                stats: '80 HP / 14 ATK', 
+                img: 'assets/img/unidades/monas2.webp' 
+            },
+            { 
+                nombre: 'Caballeria Aznauri', 
+                costo: '200A 300O', 
+                mejora: 'Las unidades montadas ocupan un -20 % menos de espacio de población.', 
+                stats: 'Monaspas ocupan -20% espacio de población', 
+                img: 'assets/img/unidades/tec.webp',
+                especial: 'TECNOLOGÍA ÚNICA' 
+            }
+            
+        ]
+    },
+    {
+        id: 'Shririvamsha',
+        nombre: 'Jinete de Shririvamsha',
+        imagen: 'assets/img/unidades/shri.webp',
+        tipo: 'Caballeria',
+        hp: 55, 
+        atk: 8, 
+        arm: '0/1',
+        especial: 'ÚNICA: GURJARAS',
+        desc: 'Jinete ligero y rápido exclusivo de los gurjaras que puede esquivar proyectiles. Fuerte contra soldados a distancia.',
+        evoluciones: [
+            { 
+                nombre: 'Jinete de Shririvamsha', 
+                costo: '55A 85O', 
+                mejora: 'Unidad Base', 
+                stats: '55 HP / 8 ATK', 
+                img: 'assets/img/unidades/shri.webp' 
+            },
+            { 
+                nombre: 'Jinete de Shririvamsha de Élite', 
+                costo: '850A 500O', 
+                mejora: '+15 HP, +3 ATK', 
+                stats: '70 HP / 11 ATK', 
+                img: 'assets/img/unidades/shri2.webp' 
+            },
+            { 
+                nombre: 'Chatrias', 
+                costo: '500A 450O', 
+                mejora: 'Las unidades militares cuestan un 25 % menos de comida..', 
+                stats: 'Shririvamsha cuestan 25% menos comida', 
+                img: 'assets/img/unidades/tec.webp',
+                especial: 'TECNOLOGÍA ÚNICA' 
+            }
+            
+        ]
+    },
+    {
+        id: 'Tarcano',
+        nombre: 'Tarcano',
+        imagen: 'assets/img/unidades/tarkan.webp',
+        tipo: 'Caballeria',
+        hp: 100, 
+        atk: 8, 
+        arm: '1/3',
+        especial: 'ÚNICA: HUNOS',
+        desc: 'Caballería pesada exclusiva de los hunos. Excepcionalmente fuerte contra edificios.',
+        evoluciones: [
+            { 
+                nombre: 'Tarcano', 
+                costo: '55A 85O', 
+                mejora: 'Unidad Base', 
+                stats: '55 HP / 8 ATK', 
+                img: 'assets/img/unidades/shri.webp' 
+            },
+            { 
+                nombre: 'Tarcano de Élite', 
+                costo: '850A 500O', 
+                mejora: '+50 HP, +3 ATK', 
+                stats: '150 HP / 11 ATK', 
+                img: 'assets/img/unidades/tarkan2.webp' 
+            },
+            { 
+                nombre: 'Razias', 
+                costo: '500A 450O', 
+                mejora: 'Los tarcanos se pueden entrenar en los establos.', 
+                stats: 'Tarcanos disponibles en establos', 
+                img: 'assets/img/unidades/tec.webp',
+                especial: 'TECNOLOGÍA ÚNICA' 
+            }
+            
+        ]
+    },
+    {
+        id: 'Elefante de Guerra',
+        nombre: 'Elefante de Guerra',
+        imagen: 'assets/img/unidades/warele.webp',
+        tipo: 'Caballeria',
+        hp: 450, 
+        atk: 15, 
+        arm: '1/2',
+        especial: 'ÚNICA: PERSAS',
+        desc: 'Unidad de caballería exclusiva de los persas que inflige daño de arrollamiento. Fuerte contra edificios y unidades a corta distancia.',
+        evoluciones: [
+            { 
+                nombre: 'Elefante de Guerra', 
+                costo: '170A 85O', 
+                mejora: 'Unidad Base', 
+                stats: '450 HP / 15 ATK', 
+                img: 'assets/img/unidades/warele.webp' 
+            },
+            { 
+                nombre: 'Elefante de Guerra de Élite', 
+                costo: '1350A 800O', 
+                mejora: '+150 HP, +5 ATK', 
+                stats: '600 HP / 20 ATK', 
+                img: 'assets/img/unidades/warele2.webp' 
+            },
+            
+        ]
+    },
+              
+
+
+
 
     { 
         id: 'arquero', 
