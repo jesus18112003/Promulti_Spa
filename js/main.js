@@ -704,7 +704,7 @@ const civilizacionesAoE = [
     {
         id: 'borgoñeses',
         nombre: "LOS BORGONES",
-        region: "Europa Occ",
+        region: "Europa Occidental",
         icono: "assets/img/CivIcon-borgo.webp",
         imgCastillo: "assets/img/castillos/borgo.webp",
         tipo: "Civilización de Caballería y Polvora",
@@ -1023,7 +1023,7 @@ const civilizacionesAoE = [
      {
         id: 'sarracenos',
         nombre: "LOS SARRACENOS",
-        region: "Medio Oriente",
+        region: "Oriente Medio",
         icono: "assets/img/CivIcon-sarra.webp",
         imgCastillo: "assets/img/castillos/sarra.webp",
         tipo: "Civilización naval y de camellos",
@@ -1047,7 +1047,7 @@ const civilizacionesAoE = [
     {
         id: 'turcos',
         nombre: "LOS TURCOS",
-        region: "Medio Oriente",
+        region: "Oriente Medio",
         icono: "assets/img/CivIcon-turco.webp",
         imgCastillo: "assets/img/castillos/turco.webp",
         tipo: "Civilización de pólvora",
