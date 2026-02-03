@@ -729,7 +729,7 @@ const civilizacionesAoE = [
     {
         id: 'dravidicos',
         nombre: "LOS DRÁVIDICOS",
-        region: "Sudáfrica",
+        region: "India y el Sudeste Asiático",
         icono: "assets/img/CivIcon-dravi.webp",
         imgCastillo: "assets/img/castillos/dravi.webp",
         tipo: "Civilización de Infantería y Arqueros",
@@ -754,7 +754,7 @@ const civilizacionesAoE = [
     {
         id: 'etiopes',
         nombre: "LOS ETIOPES",
-        region: "Sudáfrica",
+        region: "Africa",
         icono: "assets/img/CivIcon-etiop.webp",
         imgCastillo: "assets/img/castillos/etiop.webp",
         tipo: "Civilización de Arqueros",
@@ -777,7 +777,7 @@ const civilizacionesAoE = [
     {
         id: 'gurjaras',
         nombre: "LOS GURJARAS",
-        region: "Sudáfrica",
+        region: "India y el Sudeste Asiático",
         icono: "assets/img/CivIcon-gurjar.webp",
         imgCastillo: "assets/img/castillos/gurjar.webp",
         tipo: "Civilización de camellos y caballería",
@@ -803,7 +803,7 @@ const civilizacionesAoE = [
     {
         id: 'italianos',
         nombre: "LOS ITALIANOS",
-        region: "Sudáfrica",
+        region: "Mediterraneo",
         icono: "assets/img/CivIcon-Ita.webp",
         imgCastillo: "assets/img/castillos/ita.webp",
         tipo: "Civilización naval y de arqueros",
@@ -853,7 +853,7 @@ const civilizacionesAoE = [
     {
         id: 'kitans',
         nombre: "LOS KITANS",
-        region: "Asia oriental",
+        region: "Asia del Este",
         icono: "assets/img/CivIcon-kitan.webp",
         imgCastillo: "assets/img/castillos/kitan.webp",
         tipo: "Civilización de infantería y caballería",
@@ -974,7 +974,7 @@ const civilizacionesAoE = [
     {
         id: 'shu',
         nombre: "LOS SHU",
-        region: "Asia oriental",
+        region: "Asia del Este",
         icono: "assets/img/CivIcon-Shu.webp",
         imgCastillo: "assets/img/castillos/shu.webp",
         tipo: "Civilización de arqueros y asedio",
@@ -1097,7 +1097,7 @@ const civilizacionesAoE = [
     {
         id: 'wei',
         nombre: "LOS WEI",
-        region: "Asia occidental",
+        region: "Asia del Este",
         icono: "assets/img/CivIcon-wei.webp",
         imgCastillo: "assets/img/castillos/wei.webp",
         tipo: "Civilización de caballería",
@@ -1122,7 +1122,7 @@ const civilizacionesAoE = [
     {
         id: 'wu',
         nombre: "LOS WU",
-        region: "Asia occidental",
+        region: "Asia del Este",
         icono: "assets/img/CivIcon-wu.webp",
         imgCastillo: "assets/img/castillos/wu.webp",
         tipo: "Civilización de infantería y naval",
@@ -1147,7 +1147,7 @@ const civilizacionesAoE = [
     {
         id: 'Jurchens',
         nombre: "LOS JURCHENS",
-        region: "Asia oriental",
+        region: "Asia del Este",
         icono: "assets/img/CivIcon-yur.webp",
         imgCastillo: "assets/img/castillos/jurch.webp",
         tipo: "Civilización de caballería y pólvora",
