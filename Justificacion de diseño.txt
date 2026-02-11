@@ -1,0 +1,7 @@
+Justificación de Diseño: Interfaz
+
+El diseño de la interfaz se basa en una jerarquía visual de alto contraste diseñada para dirigir la atención del usuario hacia los elementos clave de la narrativa histórica. El uso de un fondo oscuro no solo reduce la fatiga visual, sino que permite que el color dorado actúe como un ancla de atención para títulos y elementos de prestigio, facilitando el reconocimiento de patrones de importancia. Esta paleta de colores, compuesta por tonos negros, dorados y rojos, fue seleccionada deliberadamente para mantener la coherencia estética con el logotipo y banner oficial del juego. Al alinear la interfaz con la identidad visual preexistente, se reduce la carga cognitiva del usuario, permitiendo una navegación más intuitiva basada en la familiaridad con la marca.
+
+Por otro lado, la legibilidad se refuerza mediante el uso del color rojo para etiquetas de alerta y "Era-Tags", aprovechando la respuesta instintiva del sistema visual humano hacia los tonos cálidos para resaltar información crítica. La tipografía y la organización del conocimiento en pantalla aseguran que la jerarquía de la información sea clara: los títulos grandes capturan la atención inicial, mientras que las descripciones en tonos claros proporcionan una lectura cómoda. Esta estructura visual garantiza que el procesamiento de la información sea fluido, optimizando la atención y la resolución de problemas durante la interacción con el microsite.
+
+Jesus Cabello 30.633.467

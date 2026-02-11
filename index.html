@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AoE II: Definitive Edition - Multimedia Hub</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
     <header>
@@ -14,34 +17,41 @@
     </header>
 
     <nav>
-        <ul>
-            <li><a href="#" onclick="cargarSeccion('inicio')">Inicio</a></li>
-            <li><a href="#" onclick="cargarSeccion('civilizaciones')">Civilizaciones</a></li>
-            <li><a href="#" onclick="cargarSeccion('calculadora')">Calculadora</a></li>
-        </ul>
+        <div class="nav-container">
+            <div class="logo-title">
+                <span class="gold-text">AOE II</span>
+                <span class="separator">|</span>
+                <span class="edition-text">Definitive Edition</span>
+            </div>
+            <ul>
+                <li><a href="#" onclick="cargarSeccion('inicio')">INICIO</a></li>
+                <li><a href="#" onclick="cargarSeccion('civilizaciones')">CIVILIZACIONES</a></li>
+                <li><a href="#" onclick="cargarSeccion('unidades')">ENCICLOPEDIA</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <main id="contenedor-principal">
-        
-        <section id="seccion-inicio">
-            <h2>Bienvenido, Estratega</h2>
-            <p>Explora las unidades, tecnologías y bonificaciones de las civilizaciones más poderosas.</p>
-            
-            <div class="hipermedia-container">
-                <img src="assets/king-aoe2.png" alt="Rey de Age of Empires II" id="imagen-guia" style="width: 200px;">
-                <br>
-                <button id="btn-interaccion">Mostrar Información de Unidad</button>
-                <p id="info-extra" style="display: none;">El Rey es una unidad civil única que aparece en los modos de juego de Regicida.</p>
-            </div>
-        </section>
+    <main id="contenedor-principal"></main>
 
-    </main>
+    <section class="cta-final">
+        <div class="cta-content">
+            <h2 class="cta-titulo">¿ACEPTAS EL RETO?</h2>
+            <p class="cta-subtitulo">Tu imperio te espera. Únete a miles de jugadores y escribe tu propia historia.</p>
 
-    <footer>
-        <p>&copy; 2026 Proyecto Programación Multimedia - Estudiante: Jesus Cabello]</p>
-        <p>Contacto: <a href="Jesusecb11@gmail.com">Jesusecb11@gmail.com</a></p>
-    </footer>
+            <a href="https://store.steampowered.com/app/813780/Age_of_Empires_II_Definitive_Edition/" target="_blank"
+                class="btn-steam-grande">
+                <i class="fab fa-steam"></i> CONSEGUIR EN STEAM
+            </a>
+        </div>
+    </section>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Proyecto Programación Multimedia - Estudiante: Jesus Cabello</p>
+        <p class="disclaimer">Age of Empires II es una marca registrada de Microsoft Corporation. Esta web es un
+            proyecto educativo sin fines de lucro.</p>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
