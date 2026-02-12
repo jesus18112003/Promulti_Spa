@@ -43,7 +43,7 @@ const civilizacionesAoE = [
         unidadesUnicas: [{ nombre: "Mangudai", img: "assets/img/unidades/mangu.webp" }],
         imgMaravilla: "assets/img/maravilla/mongol.webp",
         nombreMaravilla: "Gran Tienda de Genghis Khan",
-        dificultad: 4,
+        dificultad: 1,
         stats: { militar: 95, economia: 75, defensa: 40, tecnologia: 70, naval: 40 },
         tecsUnicas: [
             { nombre: "Nomadas", efecto: "Mantiene la población aunque no haya casas.", img: "assets/img/unidades/tec.webp" },
@@ -51,7 +51,7 @@ const civilizacionesAoE = [
         ],
         estrategia: {
             pico: "Edad Imperial (Late Game)",
-            mapa: "Mapas Abiertos / Estepas",
+            mapa: "Mapas Abiertos",
             composicion: "Mangudai + Asedio + Húsares",
             rol: "Pocket / Flank"
         },
@@ -74,11 +74,17 @@ const civilizacionesAoE = [
         imgMaravilla: "assets/img/maravilla/aztec.webp",
         nombreMaravilla: "Templo Mayor",
         dificultad: 3,
-        stats: { militar: 80, economia: 90, defensa: 50, tecnologia: 85, naval: 30 },
+        stats: { militar: 60, economia: 80, defensa: 60, tecnologia: 70, naval: 30 },
         tecsUnicas: [
             { nombre: "Atlatl", efecto: "+1 ataque, +1 alcance para guerrilleros.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Guerras florales", efecto: "+4 ataque para infantería.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos",
+            mapa: "Cualquier mapa terrestre",
+            composicion: "Guerreros Jaguar/Guerreros Águila + Monjes",
+            rol: "Flank"
+        }
     },
     {
         id: 'britons',
@@ -117,12 +123,18 @@ const civilizacionesAoE = [
         unidadesUnicas: [{ nombre: "Huskarle", img: "assets/img/unidades/husca.webp" }],
         imgMaravilla: "assets/img/maravilla/goth.webp",
         nombreMaravilla: "Mausoleo de Teodorico",
-        dificultad: 2,
+        dificultad: 3,
         stats: { militar: 95, economia: 60, defensa: 30, tecnologia: 50, naval: 40 },
         tecsUnicas: [
             { nombre: "Anarquía", efecto: "Permite crear Huskarles en los Cuarteles.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Movilización", efecto: "Cuarteles trabajan 100% más rápido.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad Imperial",
+            mapa: "Mapas cerrados",
+            composicion: "Huskarles + alabarderos",
+            rol: "Pocket"
+        }
     },
     {
         id: 'vikings',
@@ -144,11 +156,17 @@ const civilizacionesAoE = [
         imgMaravilla: "assets/img/maravilla/viking.webp",
         nombreMaravilla: "Iglesia de Borgund",
         dificultad: 3,
-        stats: { militar: 85, economia: 80, defensa: 50, tecnologia: 65, naval: 95 },
+        stats: { militar: 85, economia: 90, defensa: 50, tecnologia: 65, naval: 95 },
         tecsUnicas: [
             { nombre: "Hersir", efecto: "la infantería gana +5 de ataque contra la caballería y +4 contra las unidades a camello y genera +5 de oro al matar aldeanos, unidades de comercio y monjes", img: "assets/img/unidades/tec.webp" },
             { nombre: "Bogsveigar", efecto: "los arqueros y los drakkar ganan +1 de ataque", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad Imperial",
+            mapa: "Cualquier mapa terrestre",
+            composicion: "Berserkers + arqueros",
+            rol: "Flank (Arqueros)"
+        }
     },
     {
         id: 'japanese',
@@ -162,12 +180,18 @@ const civilizacionesAoE = [
         unidadesUnicas: [{ nombre: "Samurai", img: "assets/img/unidades/samurai.webp" }],
         imgMaravilla: "assets/img/maravilla/jap.webp",
         nombreMaravilla: "Todai Ji",
-        dificultad: 2,
-        stats: { militar: 90, economia: 75, defensa: 85, tecnologia: 70, naval: 80 },
+        dificultad: 3,
+        stats: { militar: 80, economia: 85, defensa: 85, tecnologia: 70, naval: 80 },
         tecsUnicas: [
             { nombre: "Yasama", efecto: "Torres disparan flechas adicionales.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Kataparuto", efecto: "Lanzapiedras se despliegan y disparan más rápido.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Imperial",
+            mapa: "Mapas hibridos/abiertos",
+            composicion: "Samurais + alabarderos/Arqueros a caballo/Lanzapiedras",
+            rol: "Flank (Arqueros)"
+        }
     },
     {
         id: 'teutons',
@@ -186,7 +210,13 @@ const civilizacionesAoE = [
         tecsUnicas: [
             { nombre: "Acorazado", efecto: "las armas de asedio ganan +4 de armadura cuerpo a cuerpo.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Almenas", efecto: "los castillos ganan +3 de alcance y la infantería guarecida dispara flechas.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad Imperial",
+            mapa: "Mapas cerrados",
+            composicion: "Caballeria pesada + alabarderos/Armas de asedio",
+            rol: "Pocket"
+        }
     },
     {
         id: 'huns',
@@ -200,10 +230,18 @@ const civilizacionesAoE = [
         unidadesUnicas: [{ nombre: "Tarkan", img: "assets/img/unidades/tarkan.webp" }],
         imgMaravilla: "assets/img/maravilla/hun.webp",
         nombreMaravilla: "Arco de Constantino",
+        dificultad: 2,
+        stats: { militar: 90, economia: 75, defensa: 70, tecnologia: 70, naval: 30 },
         tecsUnicas: [
             { nombre: "Razzias", efecto: "Tarcanos se crean en Establos.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Ateísmo", efecto: "Reduce el impacto de Reliquias y Maravillas enemigas.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Imperial",
+            mapa: "Mapas abiertos",
+            composicion: "Arqueros a caballo + Husares/Armas de asedio/Tarcanos",
+            rol: "Flank (Arqueros a caballo)/Pocket"
+        }
     },
     {
         id: 'spanish',
@@ -219,12 +257,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/espa.webp",
         nombreMaravilla: "Torre del Oro",
-        dificultad: 3,
-        stats: { militar: 88, economia: 82, defensa: 60, tecnologia: 90, naval: 85 },
+        dificultad: 2,
+        stats: { militar: 88, economia: 80, defensa: 80, tecnologia: 90, naval: 85 },
         tecsUnicas: [
             { nombre: "Inquisición", efecto: "los monjes y los misioneros convierten más rápido; los misioneros ganan +1 de alcance", img: "assets/img/unidades/tec.webp" },
             { nombre: "Supremacía", efecto: "Aldeanos se vuelven unidades militares fuertes.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad Imperial",
+            mapa: "Mapas Cerrados",
+            composicion: "Conquistadores + husares/Armas de asedio/Galeones artillados",
+            rol: "Flank (polvora)/Pocket"
+        }
     },
     {
         id: 'celts',
@@ -250,7 +294,13 @@ const civilizacionesAoE = [
         tecsUnicas: [
             { nombre: "Bastión", efecto: "los castillos y la línea de atalayas atacan un 33 % más rápido; los castillos curan a la infantería aliada en un radio de 7 casillas", img: "assets/img/unidades/tec.webp" },
             { nombre: "Furor Celta", efecto: "Asedio tiene +40% de vida.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad Imperial",
+            mapa: "Mapas Cerrados",
+            composicion: "Infanteria/Incursor azul/Armas de asedio/",
+            rol: "Flank (infanteria)/Pocket"
+        }
     },
     {
         id: 'magyars',
@@ -270,10 +320,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/magy.webp",
         nombreMaravilla: "Basílica de Esztergom",
+        dificultad: 2,
+        stats: { militar: 90, economia: 70, defensa: 50, tecnologia: 70, naval: 40 },
         tecsUnicas: [
             { nombre: "Ejercito Corvinio", efecto: "Húsares Magyar no cuestan oro.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Arcos Recurvos", efecto: "Arqueros a caballo +1 de alcance y ataque.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los castillos/Edad Imperial",
+            mapa: "Mapas Abiertos",
+            composicion: "Arqueros a caballo/Húsar Magyar/Paladines/Armas de asedio/",
+            rol: "Flank (Arqueros a caballo)/Pocket"
+        }
     },
     {
         id: 'bohemians',
@@ -293,10 +351,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/bohe.webp",
         nombreMaravilla: "Torre de la Pólvora de Praga",
+        dificultad: 3,
+        stats: { militar: 90, economia: 85, defensa: 50, tecnologia: 80, naval: 40 },
         tecsUnicas: [
             { nombre: "Tácticas de fuerte de carretas", efecto: "las unidades de pólvora se mueven un 15 % más rápido.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Reformas husitas", efecto: "el coste de oro de los monjes y de las tecnologías del monasterio se reemplaza por comida.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad Imperial",
+            mapa: "Mapas Cerrados",
+            composicion: "Alabarderos + Houfnice + Carretas de Guerra Hussita",
+            rol: "Flank (Polora)/Pocket"
+        }
     },
     {
         id: 'poles',
@@ -319,10 +385,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/poles.webp",
         nombreMaravilla: "Castillo de Wawel",
+        dificultad: 4,
+        stats: { militar: 90, economia: 90, defensa: 50, tecnologia: 90, naval: 40 },
         tecsUnicas: [
             { nombre: "Privilegios de szlachta ", efecto: "la línea de caballeros cuesta un 60 % menos de oro.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Legado lequítico", efecto: "la línea de caballería de exploración arrasa a su paso.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Husares alados/Caballeros + obuch + asedio",
+            rol: "Pocket"
+        }
     },
     {
         id: 'lithuanians',
@@ -344,10 +418,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/lit.webp",
         nombreMaravilla: "Castillo de Trakai",
+        dificultad: 3,
+        stats: { militar: 90, economia: 90, defensa: 50, tecnologia: 90, naval: 40 },
         tecsUnicas: [
             { nombre: "Fuertes en las colinas", efecto: "centros urbanos: +3 de alcance.", img: "assets/img/unidades/tec.webp" },
             { nombre: " Escudo rectangular ", efecto: "lanceros y guerrilleros: +2 de armadura.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Husares alados/Paladines/Leitis + asedio",
+            rol: "Pocket"
+        }
     },
     {
         id: 'slavs',
@@ -369,10 +451,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/slavs.webp",
         nombreMaravilla: "Iglesia de San Jorge",
+        dificultad: 4,
+        stats: { militar: 80, economia: 100, defensa: 70, tecnologia: 80, naval: 40 },
         tecsUnicas: [
             { nombre: "Detinets", efecto: "sustituye por madera el 40 % del coste de piedra de castillos y atalayas.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Druzhina", efecto: "la infantería inflige daño de arrollamiento", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Boyardos/Alabarderos + Asedio + Monjes",
+            rol: "Pocket"
+        }
     },
     {
         id: 'bulgarians',
@@ -393,10 +483,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/bulg.webp",
         nombreMaravilla: "Iglesia Redonda",
+        dificultad: 4,
+        stats: { militar: 80, economia: 70, defensa: 70, tecnologia: 80, naval: 40 },
         tecsUnicas: [
             { nombre: " Estribos", efecto: "la caballería ataca un 33 % más rápido.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Bagains", efecto: "la línea de milicia gana +5 de armadura", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Konniks/Alabarderos + Asedio",
+            rol: "Pocket"
+        }
     },
     {
         id: 'cumans',
@@ -417,10 +515,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/cuman.webp",
         nombreMaravilla: "Fortaleza de Sarkel",
+        dificultad: 4,
+        stats: { militar: 80, economia: 100, defensa: 30, tecnologia: 80, naval: 40 },
         tecsUnicas: [
             { nombre: "Ganadería de la estepa", efecto: "caballería ligera y arqueros a caballo: creación un 100 % más rápida.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Mercenarios cumanos", efecto: "todos los integrantes del equipo pueden generar 10 guerreros kipchak de élite gratis por castillo.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Kipchak/Arqueros a caballo + Husares/Lanceros Esteparios + Asedio",
+            rol: "Pocket"
+        }
     },
 
     {
@@ -442,10 +548,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/geor.webp",
         nombreMaravilla: "Fortaleza de Narikala",
+        dificultad: 3,
+        stats: { militar: 80, economia: 90, defensa: 90, tecnologia: 90, naval: 40 },
         tecsUnicas: [
             { nombre: "Torres esvanas", efecto: "las fortificaciones ganan +2 de ataque; la línea de atalayas inflige daño cuando se atraviesan.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Caballería aznauri", efecto: "las unidades de caballería ocupan un 20 % menos de espacio de población.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Monaspa/Alabarderos/Arqueros a caballo + Asedio + Torres esvanas",
+            rol: "Pocket"
+        }
     },
     {
         id: 'armenian',
@@ -468,10 +582,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/arme.webp",
         nombreMaravilla: "Iglesia de San Gregorio el Iluminador",
+        dificultad: 4,
+        stats: { militar: 70, economia: 90, defensa: 80, tecnologia: 90, naval: 80 },
         tecsUnicas: [
             { nombre: " Flota de Cilicia", efecto: "aumenta el radio de explosión de los barcos de demolición un 20 %; las galeras y dromones tienen +1 de alcance.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Relicarios ", efecto: "la infantería, a excepción de los lanceros, obtiene +30 PR; los sacerdotes guerreros curan un 100 % más rápido.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Arquero compuesto/Campeones/Monjes Guerreros/Alabarderos + Asedio",
+            rol: "Flank"
+        }
     },
     {
         id: 'chinese',
@@ -492,10 +614,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/china.webp",
         nombreMaravilla: "Templo del Cielo",
+        dificultad: 3,
+        stats: { militar: 80, economia: 90, defensa: 80, tecnologia: 90, naval: 70 },
         tecsUnicas: [
             { nombre: " La Gran Muralla", efecto: "las murallas, las líneas de atalayas y las torres de bombarda ganan un +30 % más de PR.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Cohetería ", efecto: "los escorpiones, los carros de cohetes y los Lou Chuan ganan un +25 % de ataque; los Lou Chuan disparan cohetes", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Arbalestas/Chu Ko Nu/Alabarderos + Escorpiones",
+            rol: "Flank/Pocket"
+        }
     },
     {
         id: 'koreans',
@@ -516,10 +646,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/coreanos.webp",
         nombreMaravilla: "Templo de Haeinsa",
+        dificultad: 4,
+        stats: { militar: 75, economia: 75, defensa: 80, tecnologia: 80, naval: 80 },
         tecsUnicas: [
             { nombre: "Eupseong", efecto: "línea de atalayas: +2 de alcance.", img: "assets/img/unidades/tec.webp" },
             { nombre: " Shinkichon", efecto: "Carros cohete: +1 de alcance.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Arbalestas/Lanceros de fuego/Carros cohete/Alabarderos + Carros de guerra",
+            rol: "Flank"
+        }
     },
     {
         id: 'indians',
@@ -542,10 +680,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/ind.webp",
         nombreMaravilla: "Tumba de Humayun",
+        dificultad: 3,
+        stats: { militar: 85, economia: 85, defensa: 80, tecnologia: 80, naval: 80 },
         tecsUnicas: [
             { nombre: "Camino del Gran Tronco", efecto: "todos los ingresos de oro son un +10 % más rápidos; la tarifa de mercado se reduce al 10 %.", img: "assets/img/unidades/tec.webp" },
             { nombre: " Shatagni ", efecto: "artilleros manuales: +2 de alcance.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Camello Imperial/Artillero manual/Gulam + Cañones",
+            rol: "Flank/pocket"
+        }
     },
     {
         id: 'persians',
@@ -568,10 +714,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/persa.webp",
         nombreMaravilla: "Palacio de Persépolis",
+        dificultad: 2,
+        stats: { militar: 85, economia: 95, defensa: 85, tecnologia: 80, naval: 80 },
         tecsUnicas: [
             { nombre: "Kamandaran", efecto: "el coste de oro de los arqueros se reemplaza por un coste adicional de madera.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Ciudadelas", efecto: "los castillos infligen +4 de ataque, +3 contra arietes, +3 contra infantería y reciben un 25 % menos de daño adicional.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Arqueros a caballo/Caballeria/Arqueros + Asedio",
+            rol: "Pocket"
+        }
     },
     {
         id: 'mayans',
@@ -591,10 +745,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/maya.webp",
         nombreMaravilla: "Templo del gran jaguar",
+        dificultad: 3,
+        stats: { militar: 85, economia: 95, defensa: 85, tecnologia: 80, naval: 80 },
         tecsUnicas: [
             { nombre: "Lanzadores de hul 'che", efecto: "los guerrilleros disparan un proyectil adicional.", img: "assets/img/unidades/tec.webp" },
             { nombre: "El Dorado", efecto: "40 PR más para guerreros águila.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Arqueros a pie/Arquero de Plumas/Guerreros águila + Asedio",
+            rol: "Flank"
+        }
     },
 
     {
@@ -616,10 +778,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/inca.webp",
         nombreMaravilla: "Templo del sol",
+        dificultad: 3,
+        stats: { militar: 85, economia: 85, defensa: 85, tecnologia: 80, naval: 80 },
         tecsUnicas: [
             { nombre: "Huaracas", efecto: "(los guerrilleros y los soldados con honda no tienen alcance mínimo; los soldados con honda ganan +1 de ataque.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Escudos de tela", efecto: "los kamayuks, los soldados con honda y los guerreros águila ganan +1 de armadura y +2 de armadura perforante.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Arqueros a pie/Kamayuk/Hondero + Asedio",
+            rol: "Flank"
+        }
     },
     {
         id: 'bengalis',
@@ -641,10 +811,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/beng.webp",
         nombreMaravilla: "Somapura Mahavihara",
+        dificultad: 5,
+        stats: { militar: 75, economia: 100, defensa: 85, tecnologia: 80, naval: 95 },
         tecsUnicas: [
             { nombre: "Paiks", efecto: "los rathas y las unidades en elefante atacan un 20 % más rápido.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Mahāyāna ", efecto: "los aldeanos y los monjes ocupan un 10 % menos de espacio de población.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad Imperial",
+            mapa: "Mapas Cerrados",
+            composicion: "Ratha/Elefanque arquero/Elefante de Combate/Alabarderos + Asedio",
+            rol: "Flank/Pocket"
+        }
     },
     {
         id: 'Tartaros',
@@ -666,10 +844,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/tart.webp",
         nombreMaravilla: "Observatorio de Ulugh Beg",
+        dificultad: 3,
+        stats: { militar: 90, economia: 80, defensa: 80, tecnologia: 80, naval: 70 },
         tecsUnicas: [
             { nombre: "Armadura de seda", efecto: "(la caballería ligera y los arqueros a caballo reciben +1 de armadura cuerpo a cuerpo/+1 de armadura antiperforación.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Tácticas de asedio timúridas", efecto: "trebuchets: +2 de alcance.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Cerrados",
+            composicion: "Arqueros a caballo/Keshik/Husares + Lanzapiedras",
+            rol: "Pocket"
+        }
     },
     {
         id: 'bereberes',
@@ -690,10 +876,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/berb.webp",
         nombreMaravilla: "Torre de Hassan",
+        dificultad: 2,
+        stats: { militar: 80, economia: 80, defensa: 80, tecnologia: 80, naval: 95 },
         tecsUnicas: [
             { nombre: "Alcazabas", efecto: "los castillos de todo el equipo funcionan un 25 % más rápido.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Camellos magrebíes", efecto: "las unidades a camello regeneran 15 PR por minuto.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Cerrados",
+            composicion: "Caballeria/Arquero a Camello + Asedio",
+            rol: "Pocket"
+        }
     },
     {
         id: 'birmanos',
@@ -714,10 +908,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/bir.webp",
         nombreMaravilla: "Pagoda Shwezigon",
+        dificultad: 5,
+        stats: { militar: 80, economia: 90, defensa: 80, tecnologia: 80, naval: 70 },
         tecsUnicas: [
             { nombre: "Caballería manipur", efecto: "la caballería cuenta con +4 de ataque contra soldados a distancia.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Howdah", efecto: "los elefantes de combate ganan +1 de armadura cuerpo a cuerpo/+1 de armadura antiperforación.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Cerrados",
+            composicion: "Arambai + Husares + Alabardas/Campeones/Elefantes de combate + Asedio",
+            rol: "Flank/Pocket"
+        }
     },
     {
         id: 'bizantinos',
@@ -739,10 +941,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/biza.webp",
         nombreMaravilla: "basilica de Santa Sofía",
+        dificultad: 2,
+        stats: { militar: 80, economia: 80, defensa: 100, tecnologia: 80, naval: 80 },
         tecsUnicas: [
             { nombre: " Fuego griego", efecto: "los barcos incendiarios ganan +1 de alcance y las torres de bombardeo y los dromones ganan radio de explosión.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Logística", efecto: "las catafractas infligen daño de arrollamiento, ganan +6 de ataque contra la infantería).", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Cerrados",
+            composicion: "Catafractas/Guerrilla/Alabardas + Asedio",
+            rol: "Flank"
+        }
     },
     {
         id: 'borgoñeses',
@@ -764,10 +974,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/borgo.webp",
         nombreMaravilla: "Ayuntamiento de Bruselas",
+        dificultad: 5,
+        stats: { militar: 80, economia: 100, defensa: 80, tecnologia: 100, naval: 70 },
         tecsUnicas: [
             { nombre: "Viñedos de Borgoña ", efecto: "los agricultores generan oro gradualmente además de comida.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Revolución flamenca", efecto: "todos los aldeanos existentes se transforman en milicia flamenca.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad Imperial",
+            mapa: "Mapas Cerrados",
+            composicion: "Paladin/Coustiller/Alabardas/Artilleros Manuales + Cañones",
+            rol: "Pocket"
+        }
     },
     {
         id: 'dravidicos',
@@ -789,10 +1007,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/dravi.webp",
         nombreMaravilla: "Templo de Kailasa",
+        dificultad: 5,
+        stats: { militar: 90, economia: 80, defensa: 80, tecnologia: 80, naval: 90 },
         tecsUnicas: [
             { nombre: "Cuerpo de médicos", efecto: "las unidades en elefante regeneran 30 PR por minuto.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Acero wootz ", efecto: "los ataques de infantería y caballería ignoran la armadura.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad Imperial",
+            mapa: "Mapas Cerrados",
+            composicion: "Elefante arquero/Infanteria/Urumi + Asedio",
+            rol: "Flank/Pocket"
+        }
     },
     {
         id: 'etiopes',
@@ -812,10 +1038,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/etiop.webp",
         nombreMaravilla: "Biet medhane alem",
+        dificultad: 3,
+        stats: { militar: 90, economia: 80, defensa: 80, tecnologia: 100, naval: 70 },
         tecsUnicas: [
             { nombre: "Herederos regios", efecto: "los shotelai y las unidades a camello reciben -3 de daño de unidades montadas.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Mecanismos de torsión", efecto: "mayor área de daño para unidades del taller de maquinaria de asedio.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Arqueros/Alabardas/Shotelai + Asedio",
+            rol: "Flank/Pocket"
+        }
     },
     {
         id: 'gurjaras',
@@ -838,10 +1072,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/gurjar.webp",
         nombreMaravilla: "Templo de Somnath",
+        dificultad: 5,
+        stats: { militar: 90, economia: 80, defensa: 80, tecnologia: 80, naval: 80 },
         tecsUnicas: [
             { nombre: " Chatrias", efecto: "las unidades militares cuestan un -25 % menos de comida.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Guardas fronterizos", efecto: "+4 de armadura cuerpo a cuerpo a los jinetes de camello y arqueros sobre elefante.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Cerrados",
+            composicion: "Camellos/Jinetes de Shri/Chakram + Asedio",
+            rol: "Pocket"
+        }
     },
     {
         id: 'italianos',
@@ -864,10 +1106,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/ita.webp",
         nombreMaravilla: "Catedral de San lorenzo",
+        dificultad: 2,
+        stats: { militar: 90, economia: 85, defensa: 80, tecnologia: 100, naval: 100 },
         tecsUnicas: [
             { nombre: "Ruta de la seda", efecto: "las unidades mercantes cuestan un 50 % menos.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Pirotecnia", efecto: "los artilleros manuales infligen un 15 % más de daño perforante y son más precisos.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Arqueros/Ballesero Genoves/Condotiero/Artilleros Manuales + Cañones",
+            rol: "Flank"
+        }
     },
     {
         id: 'jemeres',
@@ -888,10 +1138,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/jeme.webp",
         nombreMaravilla: "Angkor Wat",
+        dificultad: 3,
+        stats: { militar: 90, economia: 100, defensa: 80, tecnologia: 80, naval: 80 },
         tecsUnicas: [
             { nombre: " Colmillos de acero.", efecto: "+3 de ataque en elefantes de combate.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Ballesta doble", efecto: "los elefantes con balistas y los escorpiones disparan un proyectil adicional.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Elefantes/Caballeria/Alabarderos + Escorpiones",
+            rol: "Flank/Pocket"
+        }
     },
     {
         id: 'kitans',
@@ -913,10 +1171,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/kitan.webp",
         nombreMaravilla: "Pagoda del templo forgong",
+        dificultad: 4,
+        stats: { militar: 100, economia: 100, defensa: 80, tecnologia: 80, naval: 80 },
         tecsUnicas: [
             { nombre: "Armadura laminada.", efecto: "la infantería y los guerrilleros devuelven un 25 % del daño cuerpo a cuerpo al atacante.", img: "assets/img/unidades/tec.webp" },
-            { nombre: "Ballesta doble", efecto: "la caballería regenera puntos de resistencia en combate.", img: "assets/img/unidades/tec.webp" }
-        ]
+            { nombre: "Caballeria Ordo", efecto: "la caballería regenera puntos de resistencia en combate.", img: "assets/img/unidades/tec.webp" }
+        ],
+        estrategia: {
+            pico: "Edad feudal/Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Abiertos",
+            composicion: "Husares/Lanceros Esteparios/Arqueros a caballo/Liao Dao/Lancero de fuego + Asedio",
+            rol: "Pocket"
+        }
     },
     {
         id: 'malayos',
@@ -937,10 +1203,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/malayo.webp",
         nombreMaravilla: "Kalasam",
+        dificultad: 5,
+        stats: { militar: 90, economia: 90, defensa: 80, tecnologia: 80, naval: 100 },
         tecsUnicas: [
             { nombre: "Talasocracia.", efecto: "mejora los muelles a puertos.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Leva en masa ", efecto: "la milicia y subsiguientes dejan de costar oro y cuestan comida adicional.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados/Hibridos",
+            composicion: "Arbalesta/Elefantes de combate/Karambits/Alabarderos + Asedio",
+            rol: "Flank/Pocket"
+        }
     },
     {
         id: 'malies',
@@ -960,10 +1234,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/mali.webp",
         nombreMaravilla: "Gran mezquita de Djenné",
+        dificultad: 3,
+        stats: { militar: 90, economia: 90, defensa: 80, tecnologia: 80, naval: 70 },
         tecsUnicas: [
             { nombre: "Gran asamblea.", efecto: "los centros urbanos disparan flechas sin unidades guarnecidas.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Farimba ", efecto: "+5 de ataque para la caballería.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados/Hibridos",
+            composicion: "Caballeria/Infanteria/Guardianas de Gbeto + Asedio",
+            rol: "Flank/Pocket"
+        }
     },
     {
         id: 'portigueses',
@@ -984,6 +1266,7 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/portu.webp",
         nombreMaravilla: "Torre de la Almazara",
+
         tecsUnicas: [
             { nombre: " Carracas.", efecto: "+1 de armadura y +1 de armadura antiperforación para barcos.", img: "assets/img/unidades/tec.webp" },
             { nombre: " Arcabuz", efecto: "las unidades de pólvora son más precisas contra objetivos en movimiento", img: "assets/img/unidades/tec.webp" }
@@ -1182,10 +1465,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/wu.webp",
         nombreMaravilla: "Templo de Jing'an",
+        dificultad: 3,
+        stats: { militar: 90, economia: 80, defensa: 80, tecnologia: 80, naval: 100 },
         tecsUnicas: [
             { nombre: "Tácticas de los Acantilados Rojos.", efecto: "los barcos de demolición y los arqueros de fuego infligen daño por fuego a los barcos y edificios.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Tigre sentado", efecto: "(los mangoneles y los trebuchets de Lou Chuan disparan proyectiles adicionales.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Abiertos",
+            composicion: "Espadachines de Jian/Ballestas/Trebuchet de traccion",
+            rol: "Flank"
+        }
     },
     {
         id: 'Jurchens',
@@ -1209,10 +1500,18 @@ const civilizacionesAoE = [
         ],
         imgMaravilla: "assets/img/maravilla/jurch.webp",
         nombreMaravilla: "Bosque de Pagodas Yingshan",
+        dificultad: 5,
+        stats: { militar: 90, economia: 80, defensa: 100, tecnologia: 80, naval: 70 },
         tecsUnicas: [
             { nombre: " Bastiones fortificados.", efecto: "las fortificaciones regeneran 500 puntos de resistencia por minuto.", img: "assets/img/unidades/tec.webp" },
             { nombre: "Bombas trueno", efecto: "los carros de cohetes, los granaderos y los Lou Chuan detonan al ser derrotados; los proyectiles producen explosiones adicionales.", img: "assets/img/unidades/tec.webp" }
-        ]
+        ],
+        estrategia: {
+            pico: "Edad de los Castillos/Edad Imperial",
+            mapa: "Mapas Abiertos/Cerrados",
+            composicion: "Husares/Pagoda de hierro/Lanceros de fuego/Carros de cohetes/Granaderos + Asedio",
+            rol: "Pocket"
+        }
     },
 
 
